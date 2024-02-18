@@ -1,11 +1,14 @@
-import Footer from "./components/Footer/Footer";
-import Header from "./components/Header/Header";
+// import Footer from "./components/Footer/Footer";
+// import Header from "./components/Header/Header";
+
+import TopBanner from "./components/Home/TopBanner";
 
 const Home = () => {
   return (
     <>
-      <Header />
-      <Footer />
+      <TopBanner />
+      {/* <Header />
+      <Footer /> */}
     </>
   );
 };
