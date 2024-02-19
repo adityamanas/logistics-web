@@ -127,7 +127,7 @@ const Footer: React.FC = () => {
             <Typography>About Us</Typography>
           </div>
         </div>
-        <div style={{ display: "flex", justifyContent: "space-between" }}>
+        <div style={{ display: "flex", justifyContent: "space-around" }}>
           <Typography
             style={{ color: "gray", fontSize: "15px", fontWeight: "bold" }}
           >

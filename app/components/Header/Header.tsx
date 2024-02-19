@@ -34,15 +34,15 @@ const useStyles = makeStyles({
     gap: "100px",
   },
   getStartedButton: {
-    color: "#ED3232",
+    color: "orange",
     padding: "13px 40px",
-    border: "1px solid #ED3232",
+    border: "1px solid orange",
     fontWeight: "bold",
     fontSize: "19px",
     textTransform: "capitalize",
     letterSpacing: "1px",
     "&:hover": {
-      backgroundColor: "#ED3232",
+      backgroundColor: "orange",
       color: "white",
     },
   },
@@ -52,7 +52,7 @@ const Header: React.FC<HeaderProps> = ({ title }) => {
   const classes = useStyles();
   return (
     <AppBar
-      position="static"
+      position="sticky"
       style={{
         background: "#F5F5FA",
       }}
