@@ -1,14 +1,10 @@
 "use client";
 import { ClassNames } from "@emotion/react";
-import {
-  AppBar,
-  Toolbar,
-  Typography,
-  Container,
-  Button,
-} from "@material-ui/core";
+import { AppBar, Toolbar, Typography, Button } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-import logo from "../../../public/images/logo.jpeg";
+import logo from "../../../public/images/logo.png";
+import Image from "next/image";
+import Container from "../Container/Container";
 
 interface HeaderProps {
   title: string;
@@ -26,12 +22,12 @@ const useStyles = makeStyles({
   },
   navbar: {
     // background: "rgb(77, 70, 67)",
-    background: "#ED3232",
+    background: "#cf5435",
     display: "flex",
-    justifyContent: "center",
-    height: "15vh",
+    justifyContent: "space-between",
+    height: "90px",
     alignItems: "center",
-    gap: "166px",
+    // gap: "166px",
     position: "sticky",
     // top: "0",
   },
@@ -50,7 +46,7 @@ const useStyles = makeStyles({
   },
 });
 
-const Header: React.FC<HeaderProps> = ({ title }) => {
+const Header: React.FC<HeaderProps> = () => {
   const classes = useStyles();
   return (
     <AppBar
@@ -59,71 +55,101 @@ const Header: React.FC<HeaderProps> = ({ title }) => {
         background: "#F5F5FA",
       }}
     >
+      <Container>
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent:"flex-end",
+            // marginLeft: "76%",
+            
+            height: "50px",
+          }}
+        >
+          <Typography variant="h6" className={classes.headercontact}>
+            Contact Us :
+          </Typography>
+          <Typography className={classes.number} style={{ color: "black" }}>
+            +91 12345678
+          </Typography>
+        </div>
+      </Container>
       <div
         style={{
-          display: "flex",
-          alignItems: "center",
-          marginLeft: "76%",
-          height: "8vh",
+          background: "#cf5435",
         }}
       >
-        <Typography variant="h6" className={classes.headercontact}>
-          Contact Us :
-        </Typography>
-        <Typography className={classes.number} style={{ color: "black" }}>
-          +91 12345678
-        </Typography>
-      </div>
-      <div className={classes.navbar}>
-        <div>
-          <img
-            // src="https://stockarea.io/assets/user/images/footer/stockarea-logo.png"
-            src={logo}
-            alt="logo"
-            style={{ height: "5vh" }}
-          />
-        </div>
-        <div style={{ display: "flex", gap: "51px" }}>
-          <Typography
-            variant="h6"
-            style={{ color: "white", fontSize: "14px", letterSpacing: "0.2px" }}
-          >
-            Products
-          </Typography>
-          <Typography
-            variant="h6"
-            style={{
-              color: "white",
-              fontSize: "15px",
-              letterSpacing: "1px",
-            }}
-          >
-            Network
-          </Typography>
-          <Typography
-            variant="h6"
-            style={{ color: "white", fontSize: "14px", letterSpacing: "1px" }}
-          >
-            Services
-          </Typography>
-          <Typography
-            variant="h6"
-            style={{ color: "white", fontSize: "14px", letterSpacing: "1px" }}
-          >
-            Resources
-          </Typography>
-        </div>
-        <div style={{ display: "flex", alignItems: "center", gap: "20px" }}>
-          <Typography
-            variant="h6"
-            style={{ color: "white", fontSize: "14px", letterSpacing: "1px" }}
-          >
-            Log In
-          </Typography>
-          <Button variant="outlined" className={classes.getStartedButton}>
-            Get Started
-          </Button>
-        </div>
+        <Container>
+          <div className={classes.navbar}>
+            <div>
+              <Image
+                alt="logo"
+                src={logo}
+                style={{
+                  width: "50px",
+                  height: "50px",
+                }}
+              />
+            </div>
+            <div style={{ display: "flex", gap: "51px" }}>
+              <Typography
+                variant="h6"
+                style={{
+                  color: "white",
+                  fontSize: "14px",
+                  letterSpacing: "0.2px",
+                }}
+              >
+                Products
+              </Typography>
+              <Typography
+                variant="h6"
+                style={{
+                  color: "white",
+                  fontSize: "15px",
+                  letterSpacing: "1px",
+                }}
+              >
+                Network
+              </Typography>
+              <Typography
+                variant="h6"
+                style={{
+                  color: "white",
+                  fontSize: "14px",
+                  letterSpacing: "1px",
+                }}
+              >
+                Services
+              </Typography>
+              <Typography
+                variant="h6"
+                style={{
+                  color: "white",
+                  fontSize: "14px",
+                  letterSpacing: "1px",
+                }}
+              >
+                Resources
+              </Typography>
+            </div>
+            <div style={{ display: "flex", alignItems: "center", gap: "20px" }}>
+              <Typography
+                variant="h6"
+                style={{
+                  color: "white",
+                  fontSize: "14px",
+                  letterSpacing: "1px",
+                }}
+              >
+                Log In
+              </Typography>
+              <Button variant="outlined" className={classes.getStartedButton}>
+                Get Started
+              </Button>
+            </div>
+          </div>
+        </Container>
       </div>
     </AppBar>
   );
