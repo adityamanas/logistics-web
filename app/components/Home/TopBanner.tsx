@@ -5,13 +5,14 @@ import Footer from "../Footer/Footer";
 import { Button, Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import Solution from "./Solution";
+import Container from "../Container/Container";
 
 const useStyles = makeStyles({
   learnMoreButton: {
     fontSize: "19px",
     cursor: "pointer",
     "&:hover": {
-      color: "orange",
+      color: "#ED3232",
     },
   },
 });
@@ -20,6 +21,7 @@ const TopBanner: React.FC = () => {
   const classes = useStyles();
   return (
     <>
+      {/* <Container> */}
       <Header />
       <div
         style={{
@@ -59,7 +61,7 @@ const TopBanner: React.FC = () => {
             <Button
               variant="contained"
               style={{
-                background: "orange",
+                background: "#ED3232",
                 color: "white",
                 padding: "13px 40px",
                 fontWeight: "bold",
@@ -78,6 +80,7 @@ const TopBanner: React.FC = () => {
       </div>
       <Solution />
       <Footer />
+      {/* </Container> */}
     </>
   );
 };

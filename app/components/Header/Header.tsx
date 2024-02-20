@@ -8,7 +8,7 @@ import {
   Button,
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-import logo from "../../../public/images/logo.png";
+import logo from "../../../public/images/logo.jpeg";
 
 interface HeaderProps {
   title: string;
@@ -26,24 +26,26 @@ const useStyles = makeStyles({
   },
   navbar: {
     // background: "rgb(77, 70, 67)",
-    background: "white",
+    background: "#ED3232",
     display: "flex",
     justifyContent: "center",
     height: "15vh",
     alignItems: "center",
-    gap: "100px",
+    gap: "166px",
+    position: "sticky",
+    // top: "0",
   },
   getStartedButton: {
-    color: "orange",
+    color: "white",
     padding: "13px 40px",
-    border: "1px solid orange",
+    border: "1px solid white",
     fontWeight: "bold",
     fontSize: "19px",
     textTransform: "capitalize",
     letterSpacing: "1px",
     "&:hover": {
-      backgroundColor: "orange",
-      color: "white",
+      backgroundColor: "white",
+      color: "#ED3232",
     },
   },
 });
@@ -52,7 +54,7 @@ const Header: React.FC<HeaderProps> = ({ title }) => {
   const classes = useStyles();
   return (
     <AppBar
-      position="sticky"
+      position="static"
       style={{
         background: "#F5F5FA",
       }}
@@ -61,7 +63,7 @@ const Header: React.FC<HeaderProps> = ({ title }) => {
         style={{
           display: "flex",
           alignItems: "center",
-          justifyContent: "flex-end",
+          marginLeft: "76%",
           height: "8vh",
         }}
       >
@@ -75,22 +77,23 @@ const Header: React.FC<HeaderProps> = ({ title }) => {
       <div className={classes.navbar}>
         <div>
           <img
-            src="https://stockarea.io/assets/user/images/header/logo.png"
+            // src="https://stockarea.io/assets/user/images/footer/stockarea-logo.png"
+            src={logo}
             alt="logo"
             style={{ height: "5vh" }}
           />
         </div>
-        <div style={{ display: "flex", gap: "40px" }}>
+        <div style={{ display: "flex", gap: "51px" }}>
           <Typography
             variant="h6"
-            style={{ color: "black", fontSize: "14px", letterSpacing: "0.2px" }}
+            style={{ color: "white", fontSize: "14px", letterSpacing: "0.2px" }}
           >
             Products
           </Typography>
           <Typography
             variant="h6"
             style={{
-              color: "black",
+              color: "white",
               fontSize: "15px",
               letterSpacing: "1px",
             }}
@@ -99,13 +102,13 @@ const Header: React.FC<HeaderProps> = ({ title }) => {
           </Typography>
           <Typography
             variant="h6"
-            style={{ color: "black", fontSize: "14px", letterSpacing: "1px" }}
+            style={{ color: "white", fontSize: "14px", letterSpacing: "1px" }}
           >
             Services
           </Typography>
           <Typography
             variant="h6"
-            style={{ color: "black", fontSize: "14px", letterSpacing: "1px" }}
+            style={{ color: "white", fontSize: "14px", letterSpacing: "1px" }}
           >
             Resources
           </Typography>
@@ -113,7 +116,7 @@ const Header: React.FC<HeaderProps> = ({ title }) => {
         <div style={{ display: "flex", alignItems: "center", gap: "20px" }}>
           <Typography
             variant="h6"
-            style={{ color: "black", fontSize: "14px", letterSpacing: "1px" }}
+            style={{ color: "white", fontSize: "14px", letterSpacing: "1px" }}
           >
             Log In
           </Typography>

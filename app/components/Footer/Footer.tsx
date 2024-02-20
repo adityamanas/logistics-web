@@ -1,5 +1,5 @@
 "use client";
-import { Container, Typography } from "@material-ui/core";
+import { Typography } from "@material-ui/core";
 import {
   Email,
   LinkedIn,
@@ -7,9 +7,11 @@ import {
   LocationOn,
   Twitter,
 } from "@mui/icons-material";
+import Container from "../Container/Container";
 
 const Footer: React.FC = () => {
   return (
+    // <Container>
     <footer
       style={{
         backgroundColor: "#2D3047",
@@ -18,8 +20,8 @@ const Footer: React.FC = () => {
         height: "100vh",
       }}
     >
-      <Container
-        maxWidth="lg"
+      <div
+        // maxWidth="lg"
         style={{
           height: "100vh",
           display: "flex",
@@ -147,8 +149,9 @@ const Footer: React.FC = () => {
             </Typography>
           </div>
         </div>
-      </Container>
+      </div>
     </footer>
+    // </Container>
   );
 };
 
