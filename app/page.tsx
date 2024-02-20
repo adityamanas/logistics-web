@@ -7,9 +7,9 @@ import TopBanner from "./components/Home/TopBanner";
 const Home = () => {
   return (
     <>
-      <Container>
-        <TopBanner />
-      </Container>
+      {/* <Container> */}
+      <TopBanner />
+      {/* </Container> */}
       {/* <Header />
       <Footer /> */}
     </>
