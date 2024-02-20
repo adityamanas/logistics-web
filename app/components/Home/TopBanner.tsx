@@ -1,11 +1,12 @@
 "use client";
-import React from "react";
+import React, { useRef, useState } from "react";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import { Button, Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import Solution from "./Solution";
 import Container from "../Container/Container";
+import ContactUsForm from "./ContactUsForm";
 
 const useStyles = makeStyles({
   learnMoreButton: {
@@ -18,11 +19,24 @@ const useStyles = makeStyles({
 });
 
 const TopBanner: React.FC = () => {
+  const [showContactUsForm, setShowContactUsForm] = useState(false);
   const classes = useStyles();
+  const contactUsFormRef = useRef<HTMLDivElement>(null);
+
+  const handleContactUsClick = () => {
+    setShowContactUsForm(true);
+    if (contactUsFormRef.current) {
+      contactUsFormRef.current.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  };
+
   return (
     <>
       {/* <Container> */}
-      <Header title={""} />
+      <Header onContactUsClick={handleContactUsClick} />
       <div
         style={{
           backgroundImage: `linear-gradient(140deg,rgba(0,0,0,.75) 52.45%,rgba(0,0,0,.1) 100%), url('https://stockarea.io/assets/user/images/home/home-cover.png')`,
@@ -32,14 +46,15 @@ const TopBanner: React.FC = () => {
           position: "relative",
         }}
       >
-   
-          <div
-            style={{
-              height: "100%",
-              width: "100%",
-              display:"flex"
-            }}
-          >     <Container>
+        <div
+          style={{
+            height: "100%",
+            width: "100%",
+            display: "flex",
+          }}
+        >
+          {" "}
+          <Container>
             <div
               style={{
                 justifyContent: "center",
@@ -69,7 +84,7 @@ const TopBanner: React.FC = () => {
                 <Button
                   variant="contained"
                   style={{
-                    background: "#ED3232",
+                    background: "#cf5435",
                     color: "white",
                     padding: "13px 40px",
                     fontWeight: "bold",
@@ -85,11 +100,11 @@ const TopBanner: React.FC = () => {
             </Typography> */}
               </div>
             </div>
-            </Container>
-          </div>
-        
+          </Container>
+        </div>
       </div>
       <Solution />
+      <div ref={contactUsFormRef}>{showContactUsForm && <ContactUsForm />}</div>
       <Footer />
       {/* </Container> */}
     </>

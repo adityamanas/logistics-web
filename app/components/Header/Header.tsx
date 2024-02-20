@@ -7,7 +7,8 @@ import Image from "next/image";
 import Container from "../Container/Container";
 
 interface HeaderProps {
-  title: string;
+  // title: string;
+  onContactUsClick: () => void;
 }
 
 const useStyles = makeStyles({
@@ -46,8 +47,9 @@ const useStyles = makeStyles({
   },
 });
 
-const Header: React.FC<HeaderProps> = () => {
+const Header: React.FC<HeaderProps> = ({ onContactUsClick }) => {
   const classes = useStyles();
+
   return (
     <AppBar
       position="static"
@@ -60,14 +62,14 @@ const Header: React.FC<HeaderProps> = () => {
           style={{
             display: "flex",
             alignItems: "center",
-            justifyContent:"flex-end",
+            justifyContent: "flex-end",
             // marginLeft: "76%",
-            
+
             height: "50px",
           }}
         >
           <Typography variant="h6" className={classes.headercontact}>
-            Contact Us :
+            tel :
           </Typography>
           <Typography className={classes.number} style={{ color: "black" }}>
             +91 12345678
@@ -134,7 +136,7 @@ const Header: React.FC<HeaderProps> = () => {
               </Typography>
             </div>
             <div style={{ display: "flex", alignItems: "center", gap: "20px" }}>
-              <Typography
+              {/* <Typography
                 variant="h6"
                 style={{
                   color: "white",
@@ -143,9 +145,13 @@ const Header: React.FC<HeaderProps> = () => {
                 }}
               >
                 Log In
-              </Typography>
-              <Button variant="outlined" className={classes.getStartedButton}>
-                Get Started
+              </Typography> */}
+              <Button
+                variant="outlined"
+                className={classes.getStartedButton}
+                onClick={onContactUsClick}
+              >
+                Contact Us
               </Button>
             </div>
           </div>
