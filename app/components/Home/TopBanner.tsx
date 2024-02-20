@@ -22,7 +22,7 @@ const TopBanner: React.FC = () => {
   return (
     <>
       {/* <Container> */}
-      <Header />
+      <Header title={""} />
       <div
         style={{
           backgroundImage: `linear-gradient(140deg,rgba(0,0,0,.75) 52.45%,rgba(0,0,0,.1) 100%), url('https://stockarea.io/assets/user/images/home/home-cover.png')`,
@@ -32,51 +32,62 @@ const TopBanner: React.FC = () => {
           position: "relative",
         }}
       >
-        <div
-          style={{
-            position: "absolute",
-            top: "50%",
-            left: "30%",
-            transform: "translate(-50%, -50%)",
-            textAlign: "center",
-            color: "#fff",
-            textAlign: "left",
-            display: "flex",
-            flexDirection: "column",
-            gap: "20px",
-            width: "40vw",
-          }}
-        >
-          <Typography style={{ fontWeight: "bolder", fontSize: "40px" }}>
-            Supply Chain Solutions to Design, Execute & Optimise your Inventory
-            Flow
-          </Typography>
-          <Typography
-            style={{ fontSize: "20px", color: "#C8C8C8", fontWeight: 500 }}
-          >
-            We are your Tech-enabled partner for storage & movement of goods
-            across India and Globe.
-          </Typography>
-          <div style={{ display: "flex", alignItems: "center", gap: "100px" }}>
-            <Button
-              variant="contained"
+   
+          <div
+            style={{
+              height: "100%",
+              width: "100%",
+              display:"flex"
+            }}
+          >     <Container>
+            <div
               style={{
-                background: "#ED3232",
-                color: "white",
-                padding: "13px 40px",
-                fontWeight: "bold",
-                fontSize: "19px",
-                textTransform: "capitalize",
-                letterSpacing: "1px",
+                justifyContent: "center",
+                height: "100%",
+                color: "#fff",
+                // textAlign: "left",
+                display: "flex",
+                flexDirection: "column",
+                // alignItems: "center",
+                gap: "20px",
+                width: "40vw",
               }}
             >
-              Talk To Us
-            </Button>
-            {/* <Typography className={classes.learnMoreButton}>
+              <Typography style={{ fontWeight: "bolder", fontSize: "40px" }}>
+                Supply Chain Solutions to Design, Execute & Optimise your
+                Inventory Flow
+              </Typography>
+              <Typography
+                style={{ fontSize: "20px", color: "#C8C8C8", fontWeight: 500 }}
+              >
+                We are your Tech-enabled partner for storage & movement of goods
+                across India and Globe.
+              </Typography>
+              <div
+                style={{ display: "flex", alignItems: "center", gap: "100px" }}
+              >
+                <Button
+                  variant="contained"
+                  style={{
+                    background: "#ED3232",
+                    color: "white",
+                    padding: "13px 40px",
+                    fontWeight: "bold",
+                    fontSize: "19px",
+                    textTransform: "capitalize",
+                    letterSpacing: "1px",
+                  }}
+                >
+                  Talk To Us
+                </Button>
+                {/* <Typography className={classes.learnMoreButton}>
               Learn More
             </Typography> */}
+              </div>
+            </div>
+            </Container>
           </div>
-        </div>
+        
       </div>
       <Solution />
       <Footer />
