@@ -5,18 +5,50 @@ import {
   LinkedIn,
   LocalPhone,
   LocationOn,
+  MarkEmailRead,
   Twitter,
 } from "@mui/icons-material";
-import { makeStyles } from "@material-ui/core/styles";
 import Container from "../Container/Container";
-import Image from "next/image";
-import logo from "../../../public/images/logo.png";
+import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles({
-  logo: {
-    width: "40px",
-    height: "40px",
-    backgroundColor: "#cf5435",
+  footerHeading: {
+
+    "@media (max-width:768px)": {
+      flexDirection: "column!important",
+      "& h4": {
+        textAlign: "center",
+      },
+      "& h6": {
+        width: "100%!important",
+        padding: "10px 0px",
+      },
+
+    },
+  },
+  footerListItemSection: {
+    "@media (max-width:768px)": {
+      flexWrap: "wrap",
+      rowGap:"34px",
+      "& p": {
+        width: "100%!important",
+      },
+    },
+  },
+  footerCopyrightSection:{
+    "@media (max-width:768px)": {
+      flexDirection: "column-reverse!important",
+      textAlign: "center",
+    },
+   
+  },
+  footerConditionPrivacy:{
+    "@media (max-width:768px)": {
+      gap:"0!important",
+      justifyContent:"space-around",
+      paddingBottom:"12px",
+    },
+ 
   },
 });
 
@@ -29,7 +61,7 @@ const Footer: React.FC = () => {
         backgroundColor: "#2D3047",
         color: "#fff",
         padding: " 50px  0px",
-        height: "100vh",
+        height: "100%",
       }}
     >
       <Container>
@@ -41,7 +73,7 @@ const Footer: React.FC = () => {
             flexDirection: "column",
           }}
         >
-          <div
+          <div className={classes.footerHeading}
             style={{
               display: "flex",
               alignItems: "center",
@@ -71,7 +103,7 @@ const Footer: React.FC = () => {
             </div>
           </div>
           {/* <br style={{ border: "1px solid white" }} /> */}
-          <div
+          <div className={classes.footerListItemSection}
             style={{
               display: "flex",
               justifyContent: "space-between",
@@ -85,22 +117,19 @@ const Footer: React.FC = () => {
               }}
             >
               <div>
-                {/* <img
+                <img
                   src="https://stockarea.io/assets/user/images/footer/stockarea-logo.png"
                   alt="logo"
                   style={{ height: "5vh" }}
-                /> */}
-                <Image alt="logo" src={logo} className={classes.logo} />
+                />
               </div>
               <div
                 style={{ display: "flex", alignItems: "center", gap: "10px" }}
               >
                 <LocationOn />
                 <Typography style={{ width: "15vw" }}>
-                  {/* 5th Floor, Kuppu Arcade, Venkatanarayana Rd, T. Nagar,
-                  Chennai, Tamil Nadu */}
-                  Plot No. 28 Ground Floor, Block B, Road No 2 Pochanpur
-                  Extension, New Delhi, 110077
+                  5th Floor, Kuppu Arcade, Venkatanarayana Rd, T. Nagar,
+                  Chennai, Tamil Nadu
                 </Typography>
               </div>
               <div
@@ -153,14 +182,14 @@ const Footer: React.FC = () => {
               <Typography>About Us</Typography>
             </div>
           </div>
-          <div style={{ display: "flex", justifyContent: "space-between" }}>
+          <div className={classes.footerCopyrightSection} style={{ display: "flex", justifyContent: "space-between" }}>
             <Typography
               style={{ color: "gray", fontSize: "15px", fontWeight: "bold" }}
             >
               &copy; 2023 Meinigar Technologies Private Limited. All rights
               reserved.
             </Typography>
-            <div style={{ display: "flex", gap: "30px" }}>
+            <div  className={classes.footerConditionPrivacy} style={{ display: "flex", gap: "30px" }}>
               <Typography
                 style={{ color: "gray", fontSize: "15px", fontWeight: "bold" }}
               >
