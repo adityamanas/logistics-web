@@ -351,9 +351,12 @@ const Header: React.FC<HeaderProps> = ({ onContactUsClick }) => {
           <Typography variant="h6">Network</Typography>
           <Typography variant="h6">Services</Typography>
           <Typography variant="h6">Resources</Typography>
-          {/* Add other menu items as needed */}
-          <Button variant="outlined" className={classes.getStartedButton}>
-            Get Started
+          <Button
+            variant="outlined"
+            className={classes.getStartedButton}
+            onClick={onContactUsClick}
+          >
+            Contact Us{" "}
           </Button>
         </div>
       )}
