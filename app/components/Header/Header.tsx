@@ -171,14 +171,15 @@ export default Header;
 //   Typography,
 //   Button,
 //   IconButton,
-//   Container,
 //   Grid,
 // } from "@material-ui/core";
 // import { makeStyles } from "@material-ui/core/styles";
-// import { DragHandleRounded } from "@mui/icons-material";
+// import { DragHandleRounded, LocalPhone } from "@mui/icons-material";
+// import logo from "../../../public/images/logo.png";
+// import Image from "next/image";
 
 // interface HeaderProps {
-//   title: string;
+//   onContactUsClick: () => void;
 // }
 
 // const useStyles = makeStyles({
@@ -192,27 +193,43 @@ export default Header;
 //     fontSize: "14px",
 //   },
 //   navbar: {
-//     background: "white",
-//     display: "flex",
+//     background: "#cf5435",
+//     display: "none",
 //     justifyContent: "center",
 //     gap: "40px",
+//     "@media (max-width: 768px)": {
+//       display: "flex",
+//     },
+//   },
+//   desktopNavbar: {
+//     background: "#cf5435",
+//     display: "flex",
+//     justifyContent: "space-between",
+//     alignItems: "center",
+//     "@media (max-width: 768px)": {
+//       display: "none",
+//     },
 //   },
 //   getStartedButton: {
-//     color: "#ED3232",
+//     color: "white",
 //     padding: "13px 40px",
-//     border: "1px solid #ED3232",
+//     border: "1px solid white",
 //     fontWeight: "bold",
 //     fontSize: "19px",
 //     textTransform: "capitalize",
 //     letterSpacing: "1px",
 //     "&:hover": {
-//       backgroundColor: "#ED3232",
-//       color: "white",
+//       backgroundColor: "white",
+//       color: "#ED3232",
 //     },
+//   },
+//   logo: {
+//     width: "50px",
+//     height: "50px",
 //   },
 // });
 
-// const Header: React.FC<HeaderProps> = ({ title }) => {
+// const Header: React.FC<HeaderProps> = ({ onContactUsClick }) => {
 //   const classes = useStyles();
 //   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -222,46 +239,79 @@ export default Header;
 
 //   return (
 //     <AppBar position="static" style={{ background: "#F5F5FA" }}>
-//       <Container>
-//         <Toolbar>
-//           <Grid container alignItems="center">
-//             <Grid item xs={2}>
-//               <Typography variant="h6" className={classes.headercontact}>
-//                 Contact Us :
-//               </Typography>
-//             </Grid>
-//             <Grid item xs={8} sm={6} md={2}>
-//               <Typography className={classes.number}>+91 12345678</Typography>
-//             </Grid>
-//             <Grid item xs={2} sm={6} md={8} container justifyContent="center">
-//               <img
-//                 src="https://stockarea.io/assets/user/images/header/logo.png"
-//                 alt="logo"
-//                 style={{ height: "5vh" }}
-//               />
-//             </Grid>
-//             <Grid
-//               item
-//               xs={2}
-//               container
-//               justifyContent="flex-end"
-//               alignItems="center"
-//             >
-//               <IconButton color="inherit" onClick={toggleMobileMenu}>
-//                 <DragHandleRounded />
-//               </IconButton>
-//             </Grid>
-//           </Grid>
-//         </Toolbar>
-//       </Container>
-//       {/* Mobile Menu */}
+//       <Toolbar className={classes.desktopNavbar}>
+//         <Image alt="logo" src={logo} className={classes.logo} />
+//         <div style={{ display: "flex", gap: "51px" }}>
+//           <Typography
+//             variant="h6"
+//             style={{
+//               color: "white",
+//               fontSize: "14px",
+//               letterSpacing: "0.2px",
+//             }}
+//           >
+//             Products
+//           </Typography>
+//           <Typography
+//             variant="h6"
+//             style={{
+//               color: "white",
+//               fontSize: "15px",
+//               letterSpacing: "1px",
+//             }}
+//           >
+//             Network
+//           </Typography>
+//           <Typography
+//             variant="h6"
+//             style={{
+//               color: "white",
+//               fontSize: "14px",
+//               letterSpacing: "1px",
+//             }}
+//           >
+//             Services
+//           </Typography>
+//           <Typography
+//             variant="h6"
+//             style={{
+//               color: "white",
+//               fontSize: "14px",
+//               letterSpacing: "1px",
+//             }}
+//           >
+//             Resources
+//           </Typography>
+//         </div>
+//         <Button
+//           variant="outlined"
+//           className={classes.getStartedButton}
+//           onClick={onContactUsClick}
+//         >
+//           Contact Us
+//         </Button>
+//       </Toolbar>
+
+//       <Toolbar className={classes.navbar}>
+//         <IconButton color="inherit" onClick={toggleMobileMenu}>
+//           <DragHandleRounded />
+//         </IconButton>
+//         <Image alt="logo" src={logo} className={classes.logo} />
+//         <LocalPhone />
+//         {/* <Typography variant="h6" className={classes.headercontact}>
+//           tel :
+//         </Typography>
+//         <Typography className={classes.number} style={{ color: "black" }}>
+//           +91 12345678
+//         </Typography> */}
+//       </Toolbar>
+
 //       {isMobileMenuOpen && (
 //         <div className={classes.navbar}>
 //           <Typography variant="h6">Products</Typography>
 //           <Typography variant="h6">Network</Typography>
 //           <Typography variant="h6">Services</Typography>
 //           <Typography variant="h6">Resources</Typography>
-//           <Typography variant="h6">Log In</Typography>
 //           <Button variant="outlined" className={classes.getStartedButton}>
 //             Get Started
 //           </Button>

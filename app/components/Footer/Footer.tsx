@@ -7,9 +7,21 @@ import {
   LocationOn,
   Twitter,
 } from "@mui/icons-material";
+import { makeStyles } from "@material-ui/core/styles";
 import Container from "../Container/Container";
+import Image from "next/image";
+import logo from "../../../public/images/logo.png";
+
+const useStyles = makeStyles({
+  logo: {
+    width: "40px",
+    height: "40px",
+    backgroundColor: "#cf5435",
+  },
+});
 
 const Footer: React.FC = () => {
+  const classes = useStyles();
   return (
     // <Container>
     <footer
@@ -17,7 +29,7 @@ const Footer: React.FC = () => {
         backgroundColor: "#2D3047",
         color: "#fff",
         padding: " 50px  0px",
-        height: "90vh",
+        height: "100vh",
       }}
     >
       <Container>
@@ -73,19 +85,22 @@ const Footer: React.FC = () => {
               }}
             >
               <div>
-                <img
+                {/* <img
                   src="https://stockarea.io/assets/user/images/footer/stockarea-logo.png"
                   alt="logo"
                   style={{ height: "5vh" }}
-                />
+                /> */}
+                <Image alt="logo" src={logo} className={classes.logo} />
               </div>
               <div
                 style={{ display: "flex", alignItems: "center", gap: "10px" }}
               >
                 <LocationOn />
                 <Typography style={{ width: "15vw" }}>
-                  5th Floor, Kuppu Arcade, Venkatanarayana Rd, T. Nagar,
-                  Chennai, Tamil Nadu
+                  {/* 5th Floor, Kuppu Arcade, Venkatanarayana Rd, T. Nagar,
+                  Chennai, Tamil Nadu */}
+                  Plot No. 28 Ground Floor, Block B, Road No 2 Pochanpur
+                  Extension, New Delhi, 110077
                 </Typography>
               </div>
               <div
