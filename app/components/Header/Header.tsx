@@ -176,6 +176,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import { DragHandleRounded, LocalPhone } from "@mui/icons-material";
 import logo from "../../../public/images/logo.png";
 import Image from "next/image";
+import Container from "../Container/Container";
 
 interface HeaderProps {
   onContactUsClick: () => void;
@@ -255,6 +256,27 @@ const Header: React.FC<HeaderProps> = ({ onContactUsClick }) => {
 
   return (
     <AppBar position="static" style={{ background: "#F5F5FA" }}>
+      //{" "}
+      <Container>
+        //{" "}
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "flex-end",
+            // marginLeft: "76%",
+
+            height: "50px",
+          }}
+        >
+          <Typography variant="h6" className={classes.headercontact}>
+            tel :
+          </Typography>
+          <Typography className={classes.number} style={{ color: "black" }}>
+            +91 12345678
+          </Typography>
+        </div>
+      </Container>
       {/* Desktop Header */}
       <Toolbar className={classes.desktopNavbar}>
         <Image alt="logo" src={logo} className={classes.logo} />
@@ -308,7 +330,6 @@ const Header: React.FC<HeaderProps> = ({ onContactUsClick }) => {
           Contact Us
         </Button>
       </Toolbar>
-
       {/* Mobile Header */}
       <Toolbar className={classes.navbar}>
         <IconButton color="inherit" onClick={toggleMobileMenu}>
@@ -323,7 +344,6 @@ const Header: React.FC<HeaderProps> = ({ onContactUsClick }) => {
           +91 12345678
         </Typography> */}
       </Toolbar>
-
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
         <div className={`${classes.navbar} ${classes.menuListItem}`}>
