@@ -1,11 +1,21 @@
 "use client";
 
 import { Typography } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core/styles";
 
+const useStyles = makeStyles({
+  storageSection: {
+    "@media (max-width:768px)": {
+      flexDirection: "column!important",
+      padding: "21px 12px!important",
+    },
+  }
+})
 const Storage: React.FC = () => {
+  const classes = useStyles();
   return (
     <>
-      <div
+      <div className={classes.storageSection}
         style={{
           display: "flex",
           alignItems: "center",
@@ -29,7 +39,7 @@ const Storage: React.FC = () => {
         <div>
           <img
             src="https://stockarea.io/assets/user/images/home/business.svg"
-            alt=""
+            alt="" width={"100%"}
           />
         </div>
       </div>

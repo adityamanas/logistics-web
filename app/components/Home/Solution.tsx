@@ -2,8 +2,30 @@
 
 import { Typography } from "@material-ui/core";
 import Storage from "./Storage";
+import { makeStyles } from "@material-ui/core/styles";
+
+const useStyles = makeStyles({
+  learnMoreButton: {
+    fontSize: "19px",
+    cursor: "pointer",
+    "&:hover": {
+      color: "#ED3232",
+    },
+  },
+  BannerSection: {
+    "@media (max-width: 768px)": {
+      width: "100%!important",
+    },
+    padding: "23px 0px",
+  },
+  solutionItem:{
+    flexWrap: "wrap",
+  }
+});
 
 const Solution: React.FC = () => {
+  const classes = useStyles();
+
   return (
     <>
       <div
@@ -11,7 +33,7 @@ const Solution: React.FC = () => {
           display: "flex",
           flexDirection: "column",
           gap: "30px",
-          height: "60vh",
+          height: "100%",
           padding: "5%",
         }}
       >
@@ -26,7 +48,7 @@ const Solution: React.FC = () => {
             We cater to business from SME to Enterprise
           </Typography>
         </div>
-        <div
+        <div className={classes.solutionItem}
           style={{
             display: "flex",
             alignItems: "center",

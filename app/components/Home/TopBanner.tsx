@@ -16,6 +16,12 @@ const useStyles = makeStyles({
       color: "#ED3232",
     },
   },
+  BannerSection: {
+    "@media (max-width: 768px)": {
+      width: "100%!important",
+    },
+    padding:"23px 0px",
+  }
 });
 
 const TopBanner: React.FC = () => {
@@ -42,7 +48,7 @@ const TopBanner: React.FC = () => {
           backgroundImage: `linear-gradient(140deg,rgba(0,0,0,.75) 52.45%,rgba(0,0,0,.1) 100%), url('https://stockarea.io/assets/user/images/home/home-cover.png')`,
           backgroundSize: "cover",
           backgroundPosition: "center",
-          height: "85vh",
+          height: "100%",
           position: "relative",
         }}
       >
@@ -55,7 +61,7 @@ const TopBanner: React.FC = () => {
         >
           {" "}
           <Container>
-            <div
+            <div className={classes.BannerSection}
               style={{
                 justifyContent: "center",
                 height: "100%",

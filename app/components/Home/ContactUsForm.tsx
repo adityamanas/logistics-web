@@ -33,7 +33,6 @@ const ContactUsForm: React.FC = () => {
       [name]: value,
     }));
 
-    // Validation logic
     if (name === "name" && value.trim() === "") {
       setErrors((prevErrors) => ({
         ...prevErrors,
@@ -47,7 +46,7 @@ const ContactUsForm: React.FC = () => {
     } else {
       setErrors((prevErrors) => ({
         ...prevErrors,
-        [name]: "", // Clear the error message if no validation error
+        [name]: "",
       }));
     }
   };
@@ -63,7 +62,6 @@ const ContactUsForm: React.FC = () => {
     });
   };
 
-  // Function to validate email format
   const validateEmail = (email: string) => {
     const re = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     return re.test(String(email).toLowerCase());
@@ -190,3 +188,193 @@ const ContactUsForm: React.FC = () => {
 };
 
 export default ContactUsForm;
+
+// "use client";
+// import {
+//   Button,
+//   TextField,
+//   TextareaAutosize,
+//   Typography,
+// } from "@material-ui/core";
+// import Image from "next/image";
+// import React, { useState } from "react";
+// import ContactImg from "../../../public/images/contact-us.png";
+// import Container from "../Container/Container";
+
+// const ContactUsForm: React.FC = () => {
+//   const [formData, setFormData] = useState({
+//     name: "",
+//     email: "",
+//     subject: "",
+//     message: "",
+//   });
+
+//   const [errors, setErrors] = useState({
+//     name: "",
+//     email: "",
+//     subject: "",
+//   });
+
+//   const handleChange = (
+//     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+//   ) => {
+//     const { name, value } = e.target;
+//     setFormData((prevState) => ({
+//       ...prevState,
+//       [name]: value,
+//     }));
+
+//     // Validation logic
+//     if (name === "name" && value.trim() === "") {
+//       setErrors((prevErrors) => ({
+//         ...prevErrors,
+//         name: "Name is required",
+//       }));
+//     } else if (name === "email" && !validateEmail(value)) {
+//       setErrors((prevErrors) => ({
+//         ...prevErrors,
+//         email: "Invalid email address",
+//       }));
+//     } else {
+//       setErrors((prevErrors) => ({
+//         ...prevErrors,
+//         [name]: "", // Clear the error message if no validation error
+//       }));
+//     }
+//   };
+
+//   const handleSubmit = (e: React.FormEvent) => {
+//     e.preventDefault();
+//     console.log(formData);
+//     setFormData({
+//       name: "",
+//       email: "",
+//       subject: "",
+//       message: "",
+//     });
+//   };
+
+//   // Function to validate email format
+//   const validateEmail = (email: string) => {
+//     const re = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+//     return re.test(String(email).toLowerCase());
+//   };
+
+//   return (
+//     <>
+//       <Container>
+//         <div style={{ padding: "0 20px" }}>
+//           <Typography
+//             variant="h3"
+//             style={{
+//               textAlign: "center",
+//               color: "#cf5435",
+//               fontWeight: "bold",
+//             }}
+//           >
+//             Contact Us
+//           </Typography>
+//           <form onSubmit={handleSubmit} style={{ margin: "20px 0" }}>
+//             <TextField
+//               id="name"
+//               name="name"
+//               label="Name"
+//               variant="standard"
+//               fullWidth
+//               value={formData.name}
+//               onChange={handleChange}
+//               error={!!errors.name}
+//               helperText={errors.name}
+//               InputProps={{
+//                 style: {
+//                   color: "#cf5435",
+//                   borderColor: "#cf5435",
+//                 },
+//               }}
+//               InputLabelProps={{
+//                 style: {
+//                   color: "#cf5435",
+//                 },
+//               }}
+//             />
+//             <TextField
+//               id="email"
+//               name="email"
+//               label="Email"
+//               variant="standard"
+//               fullWidth
+//               value={formData.email}
+//               onChange={handleChange}
+//               error={!!errors.email}
+//               helperText={errors.email}
+//               InputProps={{
+//                 style: {
+//                   color: "#cf5435",
+//                   borderColor: "#cf5435",
+//                 },
+//               }}
+//               InputLabelProps={{
+//                 style: {
+//                   color: "#cf5435",
+//                 },
+//               }}
+//             />
+//             <TextField
+//               id="subject"
+//               name="subject"
+//               label="Subject"
+//               variant="standard"
+//               fullWidth
+//               value={formData.subject}
+//               onChange={handleChange}
+//               error={!!errors.subject}
+//               helperText={errors.subject}
+//               InputProps={{
+//                 style: {
+//                   color: "#cf5435",
+//                   borderColor: "#cf5435",
+//                 },
+//               }}
+//               InputLabelProps={{
+//                 style: {
+//                   color: "#cf5435",
+//                 },
+//               }}
+//             />
+//             <TextareaAutosize
+//               minRows={5}
+//               id="message"
+//               name="message"
+//               placeholder="Message"
+//               fullWidth
+//               value={formData.message}
+//               onChange={handleChange}
+//               style={{ border: "none", width: "100%" }}
+//             />
+//             <Button
+//               type="submit"
+//               variant="contained"
+//               fullWidth
+//               style={{
+//                 background: "#cf5435",
+//                 color: "white",
+//                 padding: "13px 0",
+//                 fontWeight: "bold",
+//                 fontSize: "19px",
+//                 textTransform: "capitalize",
+//                 letterSpacing: "1px",
+//               }}
+//             >
+//               Submit
+//             </Button>
+//           </form>
+//         </div>
+//         <div style={{ textAlign: "center" }}>
+//           <Image src={ContactImg} alt="contact" width={400} height={300} />
+//         </div>
+//       </Container>
+//     </>
+//   );
+// };
+
+// export default ContactUsForm;
