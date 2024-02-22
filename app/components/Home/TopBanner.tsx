@@ -1,12 +1,12 @@
 "use client";
 import React, { useRef, useState } from "react";
-import Header from "../Header/Header";
-import Footer from "../Footer/Footer";
+import Footer from "../Footer";
 import { Button, Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import Solution from "./Solution";
 import Container from "../Container/Container";
-import ContactUsForm from "./ContactUsForm";
+// import ContactUsForm from "../ContactUsForm/contactUsForm";
+import Header from "../Header";
 
 const useStyles = makeStyles({
   learnMoreButton: {
@@ -20,29 +20,32 @@ const useStyles = makeStyles({
     "@media (max-width: 768px)": {
       width: "100%!important",
     },
-    padding:"23px 0px",
-  }
+    padding: "23px 0px",
+    "@media (min-width:769px) and (max-width:1024px)": {
+      width: "62vw!important",
+    },
+  },
 });
 
 const TopBanner: React.FC = () => {
-  const [showContactUsForm, setShowContactUsForm] = useState(false);
+  // const [showContactUsForm, setShowContactUsForm] = useState(false);
   const classes = useStyles();
-  const contactUsFormRef = useRef<HTMLDivElement>(null);
+  // const contactUsFormRef = useRef<HTMLDivElement>(null);
 
-  const handleContactUsClick = () => {
-    setShowContactUsForm(true);
-    if (contactUsFormRef.current) {
-      contactUsFormRef.current.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
-    }
-  };
+  // const handleContactUsClick = () => {
+  //   setShowContactUsForm(true);
+  //   if (contactUsFormRef.current) {
+  //     contactUsFormRef.current.scrollIntoView({
+  //       behavior: "smooth",
+  //       block: "start",
+  //     });
+  //   }
+  // };
 
   return (
     <>
       {/* <Container> */}
-      <Header onContactUsClick={handleContactUsClick} />
+      <Header />
       <div
         style={{
           backgroundImage: `linear-gradient(140deg,rgba(0,0,0,.75) 52.45%,rgba(0,0,0,.1) 100%), url('https://stockarea.io/assets/user/images/home/home-cover.png')`,
@@ -61,7 +64,8 @@ const TopBanner: React.FC = () => {
         >
           {" "}
           <Container>
-            <div className={classes.BannerSection}
+            <div
+              className={classes.BannerSection}
               style={{
                 justifyContent: "center",
                 height: "100%",
@@ -110,7 +114,7 @@ const TopBanner: React.FC = () => {
         </div>
       </div>
       <Solution />
-      <div ref={contactUsFormRef}>{showContactUsForm && <ContactUsForm />}</div>
+      {/* <div ref={contactUsFormRef}>{showContactUsForm && <ContactUsForm />}</div> */}
       <Footer />
       {/* </Container> */}
     </>

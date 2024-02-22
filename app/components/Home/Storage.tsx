@@ -9,7 +9,18 @@ const useStyles = makeStyles({
       flexDirection: "column!important",
       padding: "21px 12px!important",
     },
-  }
+    "@media (min-width:769px) and (max-width:1024px)": {
+      flexDirection: "column",
+    },
+  },
+  storageSectionHeading: {
+    "@media (max-width:768px)": {
+      width: "100%!important",
+    },
+    "@media (min-width:769px) and (max-width:1024px)": {
+      width: "100%!important",
+    },
+  },
 })
 const Storage: React.FC = () => {
   const classes = useStyles();
@@ -20,12 +31,12 @@ const Storage: React.FC = () => {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          padding: "120px",
+          padding: "33px",
           gap: "50px",
           background: "lightgrey",
         }}
       >
-        <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
+        <div className={classes.storageSectionHeading} style={{ display: "flex", flexDirection: "column", gap: "20px", width: "50%" }}>
           <Typography variant="h4" style={{ fontWeight: "600" }}>
             Simplifying storage & movement of goods for modern Indian Businesses
           </Typography>
