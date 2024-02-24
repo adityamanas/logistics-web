@@ -14,6 +14,7 @@ import { DragHandleRounded, LocalPhone } from "@mui/icons-material";
 import logo from "../../public/images/logo.png";
 import Image from "next/image";
 import Container from "./Container/Container";
+import { useRouter } from 'next/navigation'
 
 interface HeaderProps {
   // onContactUsClick: () => void;
@@ -44,7 +45,7 @@ const useStyles = makeStyles({
     },
   },
   navbar: {
-    background: "#cf5435",
+    padding: "0px",
     display: "none",
     justifyContent: "space-around",
     gap: "40px",
@@ -54,8 +55,9 @@ const useStyles = makeStyles({
     },
   },
   desktopNavbar: {
-    padding: "0 70px",
-    background: "#cf5435",
+    padding: "0px",
+    // background: "#cf5435",
+    maxHeight: "64px",
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
@@ -101,6 +103,7 @@ const useStyles = makeStyles({
 
 const Header: React.FC<HeaderProps> = () => {
   const classes = useStyles();
+  const router = useRouter()
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const toggleMobileMenu = () => {
@@ -117,72 +120,78 @@ const Header: React.FC<HeaderProps> = () => {
           </Typography>
         </a>
       </Container>
+      <div
+        style={{
+          background: " #cf5435",
+        }}
+      >
+        <Container>
+          {/* Desktop Header */}
+          <Toolbar className={classes.desktopNavbar}>
+            <Image onClick={()=>{router.push("/")}}  alt="logo" src={logo} className={classes.logo} />
+            <div style={{ display: "flex", gap: "51px" }}>
+              <Typography
+                variant="h6"
+                style={{
+                  color: "white",
+                  fontSize: "14px",
+                  letterSpacing: "0.2px",
+                }}
+              >
+                Products
+              </Typography>
+              <Typography
+                variant="h6"
+                style={{
+                  color: "white",
+                  fontSize: "15px",
+                  letterSpacing: "1px",
+                }}
+              >
+                Network
+              </Typography>
+              <Typography
+                variant="h6"
+                style={{
+                  color: "white",
+                  fontSize: "14px",
+                  letterSpacing: "1px",
+                }}
+              >
+                Services
+              </Typography>
+              <Typography
+                variant="h6"
+                style={{
+                  color: "white",
+                  fontSize: "14px",
+                  letterSpacing: "1px",
+                }}
+              >
+                Resources
+              </Typography>
+            </div>
+            <Button variant="outlined" className={classes.getStartedButton}>
+              <Link
+                href="/contact-us"
+                style={{ textDecoration: "none", color: "inherit" }}
+              >
+                <Typography>Contact Us</Typography>
+              </Link>
+            </Button>{" "}
+          </Toolbar>
 
-      {/* Desktop Header */}
-      <Toolbar className={classes.desktopNavbar}>
-        <Image alt="logo" src={logo} className={classes.logo} />
-        <div style={{ display: "flex", gap: "51px" }}>
-          <Typography
-            variant="h6"
-            style={{
-              color: "white",
-              fontSize: "14px",
-              letterSpacing: "0.2px",
-            }}
-          >
-            Products
-          </Typography>
-          <Typography
-            variant="h6"
-            style={{
-              color: "white",
-              fontSize: "15px",
-              letterSpacing: "1px",
-            }}
-          >
-            Network
-          </Typography>
-          <Typography
-            variant="h6"
-            style={{
-              color: "white",
-              fontSize: "14px",
-              letterSpacing: "1px",
-            }}
-          >
-            Services
-          </Typography>
-          <Typography
-            variant="h6"
-            style={{
-              color: "white",
-              fontSize: "14px",
-              letterSpacing: "1px",
-            }}
-          >
-            Resources
-          </Typography>
-        </div>
-        <Button variant="outlined" className={classes.getStartedButton}>
-          <Link
-            href="/contact-us"
-            style={{ textDecoration: "none", color: "inherit" }}
-          >
-            <Typography>Contact Us</Typography>
-          </Link>
-        </Button>{" "}
-      </Toolbar>
+          {/* Mobile Header */}
+          <Toolbar className={classes.navbar}>
+            <Image alt="logo" src={logo} className={classes.logo} />
+            <IconButton color="inherit" onClick={toggleMobileMenu}>
+              <DragHandleRounded />
+            </IconButton>
 
-      {/* Mobile Header */}
-      <Toolbar className={classes.navbar}>
-        <Image alt="logo" src={logo} className={classes.logo} />
-        <IconButton color="inherit" onClick={toggleMobileMenu}>
-          <DragHandleRounded />
-        </IconButton>
-
-        {/* <LocalPhone /> */}
-      </Toolbar>
-
+            {/* <LocalPhone /> */}
+          </Toolbar>
+        </Container>
+      </div>
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
         <div className={`${classes.navbar} ${classes.menuListItem}`}>
