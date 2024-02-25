@@ -5,7 +5,7 @@ import { Button, Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import Solution from "./Solution";
 import Container from "../Container/Container";
-// import ContactUsForm from "../ContactUsForm/contactUsForm";
+import { useRouter } from 'next/navigation'
 import Header from "../Header";
 
 const useStyles = makeStyles({
@@ -38,19 +38,8 @@ const useStyles = makeStyles({
 });
 
 const TopBanner: React.FC = () => {
-  // const [showContactUsForm, setShowContactUsForm] = useState(false);
+  const router = useRouter()
   const classes = useStyles();
-  // const contactUsFormRef = useRef<HTMLDivElement>(null);
-
-  // const handleContactUsClick = () => {
-  //   setShowContactUsForm(true);
-  //   if (contactUsFormRef.current) {
-  //     contactUsFormRef.current.scrollIntoView({
-  //       behavior: "smooth",
-  //       block: "start",
-  //     });
-  //   }
-  // };
 
   return (
     <>
@@ -85,6 +74,7 @@ const TopBanner: React.FC = () => {
                 flexDirection: "column",
                 // alignItems: "center",
                 gap: "20px",
+                padding:"5% 0%",
                 width: "40vw",
               }}
             >
@@ -106,6 +96,7 @@ const TopBanner: React.FC = () => {
                 style={{ display: "flex", alignItems: "center", gap: "100px" }}
               >
                 <Button
+                onClick={()=>{router.push("/contact-us")}}
                   variant="contained"
                   style={{
                     background: "#cf5435",
