@@ -3,6 +3,7 @@
 import { Typography } from "@material-ui/core";
 import Storage from "./Storage";
 import { makeStyles } from "@material-ui/core/styles";
+import Benefits from "./Benefits";
 
 const useStyles = makeStyles({
   learnMoreButton: {
@@ -18,9 +19,9 @@ const useStyles = makeStyles({
     },
     padding: "23px 0px",
   },
-  solutionItem:{
+  solutionItem: {
     flexWrap: "wrap",
-  }
+  },
 });
 
 const Solution: React.FC = () => {
@@ -48,7 +49,8 @@ const Solution: React.FC = () => {
             We cater to business from SME to Enterprise
           </Typography>
         </div>
-        <div className={classes.solutionItem}
+        <div
+          className={classes.solutionItem}
           style={{
             display: "flex",
             alignItems: "center",
@@ -104,6 +106,7 @@ const Solution: React.FC = () => {
           </div>
         </div>
       </div>
+      <Benefits />
       <Storage />
     </>
   );

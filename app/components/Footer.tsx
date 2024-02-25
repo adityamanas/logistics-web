@@ -137,8 +137,8 @@ const Footer: React.FC = () => {
               >
                 <LocationOn />
                 <Typography style={{ width: "15vw" }}>
-                  5th Floor, Kuppu Arcade, Venkatanarayana Rd, T. Nagar,
-                  Chennai, Tamil Nadu
+                  Plot No. 28, Ground Floor, Blok B, Road No. 2, Pochanpur
+                  Extension, New Delhi, 110077
                 </Typography>
               </div>
               <div

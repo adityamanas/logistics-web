@@ -49,6 +49,36 @@ const useStyles = makeStyles({
   TextField: {
     paddingTop: "12px",
   },
+  cardContentContainer: {
+    "@media (max-width:768px)": {
+      flexDirection: "column",
+      rowGap: "12px",
+    },
+  },
+  cardContentSection: {
+    "@media (max-width:768px)": {
+      padding: "23px 0!important",
+      height: "100%!important",
+    },
+    "@media (min-width:769px) and (max-width:1024px)": {
+      height: "unset!important",
+    },
+  },
+  addPara: {
+    "@media (max-width:768px)": {
+      width: "100%!important",
+    },
+  },
+  formInput: {
+    "@media (max-width:768px)": {
+      flexDirection: "column",
+    },
+    "& input": {
+      "@media (max-width:768px)": {
+        width: "100%!important",
+      },
+    },
+  },
 });
 
 const ContactUsForm: React.FC = () => {
@@ -89,7 +119,7 @@ const ContactUsForm: React.FC = () => {
     } else {
       setErrors((prevErrors) => ({
         ...prevErrors,
-        [name]: "", // Clear the error message if no validation error
+        [name]: "",
       }));
     }
   };
@@ -115,9 +145,13 @@ const ContactUsForm: React.FC = () => {
     <>
       <Header />
       <Container>
-        <div style={{ width: "100%", padding: "20px", height: "80vh" }}>
+        <div
+          className={classes.cardContentSection}
+          style={{ width: "100%", padding: "20px" }}
+        >
           <Card>
             <CardContent
+              className={classes.cardContentContainer}
               style={{ display: "flex", justifyContent: "space-around" }}
             >
               <div
@@ -133,6 +167,7 @@ const ContactUsForm: React.FC = () => {
                     Location:
                   </Typography>
                   <Typography
+                    className={classes.addPara}
                     style={{
                       width: "280px",
                       fontSize: "small",
@@ -203,6 +238,7 @@ const ContactUsForm: React.FC = () => {
             }}
           >
             <form
+              className={classes.formInput}
               onSubmit={handleSubmit}
               style={{ display: "flex", gap: "20px" }}
             >
@@ -214,11 +250,12 @@ const ContactUsForm: React.FC = () => {
                   width: "600px",
                   borderRadius: "5px",
                   border: "1px solid grey",
+                  paddingLeft: "14px",
                 }}
-                value={formData.name}
-                onChange={handleChange}
-                error={!!errors.name}
-                helperText={errors.name}
+                // value={formData.name}
+                // onChange={handleChange}
+                // error={!!errors.name}
+                // helperText={errors.name}
               />
               <input
                 type="email"
@@ -228,11 +265,12 @@ const ContactUsForm: React.FC = () => {
                   width: "600px",
                   borderRadius: "5px",
                   border: "1px solid grey",
+                  paddingLeft: "14px",
                 }}
-                value={formData.email}
-                onChange={handleChange}
-                error={!!errors.email}
-                helperText={errors.email}
+                // value={formData.email}
+                // onChange={handleChange}
+                // error={!!errors.email}
+                // helperText={errors.email}
               />
             </form>
             <div
@@ -249,11 +287,12 @@ const ContactUsForm: React.FC = () => {
                   height: "30px",
                   borderRadius: "5px",
                   border: "1px solid grey",
+                  paddingLeft: "14px",
                 }}
-                value={formData.subject}
-                onChange={handleChange}
-                error={!!errors.subject}
-                helperText={errors.subject}
+                // value={formData.subject}
+                // onChange={handleChange}
+                // error={!!errors.subject}
+                // helperText={errors.subject}
               />
               <textarea
                 name="Message"
@@ -261,9 +300,13 @@ const ContactUsForm: React.FC = () => {
                 rows="10"
                 fullwidth
                 placeholder="Message"
-                style={{ borderRadius: "5px", border: "1px solid grey" }}
-                value={formData.message}
-                onChange={handleChange}
+                style={{
+                  borderRadius: "5px",
+                  border: "1px solid grey",
+                  padding: "14px",
+                }}
+                // value={formData.message}
+                // onChange={handleChange}
                 //  error={!!errors.subject}
                 //  helperText={errors.subject}
               />

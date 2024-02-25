@@ -25,6 +25,16 @@ const useStyles = makeStyles({
       width: "62vw!important",
     },
   },
+  bannerHead: {
+    "@media (max-width: 768px)": {
+      fontSize: "35px",
+    },
+  },
+  bannerCaption: {
+    "@media (max-width: 768px)": {
+      fontSize: "18px",
+    },
+  },
 });
 
 const TopBanner: React.FC = () => {
@@ -78,12 +88,16 @@ const TopBanner: React.FC = () => {
                 width: "40vw",
               }}
             >
-              <Typography style={{ fontWeight: "bolder", fontSize: "40px" }}>
+              <Typography
+                style={{ fontWeight: "bolder", fontSize: "40px" }}
+                className={classes.bannerHead}
+              >
                 Supply Chain Solutions to Design, Execute & Optimise your
                 Inventory Flow
               </Typography>
               <Typography
                 style={{ fontSize: "20px", color: "#C8C8C8", fontWeight: 500 }}
+                className={classes.bannerCaption}
               >
                 We are your Tech-enabled partner for storage & movement of goods
                 across India and Globe.
