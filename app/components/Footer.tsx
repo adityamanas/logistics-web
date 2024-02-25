@@ -198,8 +198,7 @@ const Footer: React.FC = () => {
             <Typography
               style={{ color: "gray", fontSize: "15px", fontWeight: "bold" }}
             >
-              &copy; 2023 Meinigar Technologies Private Limited. All rights
-              reserved.
+              &copy; 2023 369 Logistics. All rights reserved.
             </Typography>
             <div
               className={classes.footerConditionPrivacy}

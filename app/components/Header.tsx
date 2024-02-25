@@ -57,7 +57,7 @@ const useStyles = makeStyles({
   },
   desktopNavbar: {
     padding: "0px",
-    // background: "#cf5435",
+    background: "#cf5435",
     maxHeight: "64px",
     display: "flex",
     justifyContent: "space-between",
@@ -91,6 +91,7 @@ const useStyles = makeStyles({
     "@media (max-width:768px)": {
       flexDirection: "column!important",
       paddingTop: "12px",
+      background: "#cf5435",
       "& h6": {
         paddingLeft: "12px",
         "&:hover": {
