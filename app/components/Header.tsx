@@ -14,7 +14,7 @@ import { DragHandleRounded, LocalPhone } from "@mui/icons-material";
 import logo from "../../public/images/logo.png";
 import Image from "next/image";
 import Container from "./Container/Container";
-import { useRouter } from 'next/navigation'
+import { useRouter } from "next/navigation";
 
 interface HeaderProps {
   // onContactUsClick: () => void;
@@ -22,6 +22,7 @@ interface HeaderProps {
 
 const useStyles = makeStyles({
   headercontact: {
+    textDecoration: "none",
     color: "#cf5435",
     fontSize: "14px",
     fontWeight: 600,
@@ -35,7 +36,6 @@ const useStyles = makeStyles({
   number: {
     color: "black",
     fontSize: "14px",
-    textDecoration: "none",
     "@media (max-width: 768px)": {
       fontSize: "7px",
     },
@@ -104,7 +104,7 @@ const useStyles = makeStyles({
 
 const Header: React.FC<HeaderProps> = () => {
   const classes = useStyles();
-  const router = useRouter()
+  const router = useRouter();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const toggleMobileMenu = () => {
@@ -129,7 +129,14 @@ const Header: React.FC<HeaderProps> = () => {
         <Container>
           {/* Desktop Header */}
           <Toolbar className={classes.desktopNavbar}>
-            <Image onClick={()=>{router.push("/")}}  alt="logo" src={logo} className={classes.logo} />
+            <Image
+              onClick={() => {
+                router.push("/");
+              }}
+              alt="logo"
+              src={logo}
+              className={classes.logo}
+            />
             <div style={{ display: "flex", gap: "51px" }}>
               <Typography
                 variant="h6"
