@@ -130,7 +130,15 @@ const Footer: React.FC = () => {
                   alt="logo"
                   style={{ height: "5vh" }}
                 /> */}
-                <Image alt="logo" src={logo} className={classes.logo} />
+                <div
+                  style={{
+                    backgroundColor: "#cf5435",
+                    width:"50px",
+                    height:"50px"
+                  }}
+                >
+                  <Image alt="logo" src={logo} height={50} width={50} />
+                </div>
               </div>
               <div
                 style={{ display: "flex", alignItems: "center", gap: "10px" }}

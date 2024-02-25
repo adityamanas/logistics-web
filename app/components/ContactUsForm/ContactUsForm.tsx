@@ -296,9 +296,9 @@ const ContactUsForm: React.FC = () => {
               />
               <textarea
                 name="Message"
-                cols="50"
-                rows="10"
-                fullwidth
+                cols={50}
+                rows={10}
+                // fullwidth
                 placeholder="Message"
                 style={{
                   borderRadius: "5px",
