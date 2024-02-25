@@ -13,7 +13,32 @@ const useStyles = makeStyles({
   benefit_icon_main: {
     display: "flex",
     flexDirection: "column",
-    justifyContent: "space-evenly",
+    justifyContent: "space-between",
+    "@media (max-width: 768px)": {
+      flexDirection: "column",
+    },
+  },
+  benefit_content: {
+    "@media (max-width: 768px)": {
+      flexDirection: "column",
+    },
+  },
+  icon_div: {
+    "@media (max-width: 768px)": {
+      flexDirection: "column",
+      textAlign: "center",
+    },
+  },
+  benefit_head: {
+    "@media (max-width: 768px)": {
+      textAlign: "center",
+      fontSize: "20px",
+    },
+  },
+  benefit_img: {
+    "@media (max-width: 768px)": {
+      height: "340px",
+    },
   },
 });
 
@@ -25,6 +50,7 @@ const Benefits: React.FC = () => {
       <div style={{ height: "100%", width: "100%" }}>
         <Typography
           style={{ fontWeight: "600", textAlign: "center", fontSize: "25px" }}
+          className={classes.benefit_head}
         >
           Benefits 369 offers as your Logistics Partner
         </Typography>
@@ -35,12 +61,20 @@ const Benefits: React.FC = () => {
             paddingTop: "30px",
             paddingBottom: "30px",
           }}
+          className={classes.benefit_content}
         >
           <div>
-            <Image alt="benefit" src={BenefitImg} />
+            <Image
+              alt="benefit"
+              src={BenefitImg}
+              className={classes.benefit_img}
+            />
           </div>
           <div className={classes.benefit_icon_main}>
-            <div style={{ display: "flex", alignItems: "center" }}>
+            <div
+              style={{ display: "flex", alignItems: "center" }}
+              className={classes.icon_div}
+            >
               <Image alt="icon1" src={Icon1} />
               <div
                 style={{
@@ -65,7 +99,10 @@ const Benefits: React.FC = () => {
                 </Typography>
               </div>
             </div>
-            <div style={{ display: "flex", alignItems: "center" }}>
+            <div
+              style={{ display: "flex", alignItems: "center" }}
+              className={classes.icon_div}
+            >
               <Image alt="icon2" src={Icon2} />
               <div
                 style={{
@@ -90,7 +127,10 @@ const Benefits: React.FC = () => {
                 </Typography>
               </div>
             </div>
-            <div style={{ display: "flex", alignItems: "center" }}>
+            <div
+              style={{ display: "flex", alignItems: "center" }}
+              className={classes.icon_div}
+            >
               <Image alt="icon3" src={Icon3} />
               <div
                 style={{
@@ -116,7 +156,10 @@ const Benefits: React.FC = () => {
                 </Typography>
               </div>
             </div>
-            <div style={{ display: "flex", alignItems: "center" }}>
+            <div
+              style={{ display: "flex", alignItems: "center" }}
+              className={classes.icon_div}
+            >
               <Image alt="icon4" src={Icon4} />
               <div
                 style={{
