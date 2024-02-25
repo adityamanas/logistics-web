@@ -129,14 +129,17 @@ const Header: React.FC<HeaderProps> = () => {
         <Container>
           {/* Desktop Header */}
           <Toolbar className={classes.desktopNavbar}>
-            <Image
-              onClick={() => {
-                router.push("/");
-              }}
-              alt="logo"
-              src={logo}
-              className={classes.logo}
-            />
+            <div className={classes.logo}>
+              <Image
+                onClick={() => {
+                  router.push("/");
+                }}
+                alt="logo"
+                src={logo}
+                width={50}
+                height={50}
+              />
+            </div>
             <div style={{ display: "flex", gap: "51px" }}>
               <Typography
                 variant="h6"
@@ -191,7 +194,7 @@ const Header: React.FC<HeaderProps> = () => {
 
           {/* Mobile Header */}
           <Toolbar className={classes.navbar}>
-            <Image alt="logo" src={logo} className={classes.logo} />
+            <Image alt="logo" width={50} height={50} src={logo} />
             <IconButton color="inherit" onClick={toggleMobileMenu}>
               <DragHandleRounded />
             </IconButton>

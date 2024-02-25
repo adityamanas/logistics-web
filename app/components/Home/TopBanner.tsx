@@ -44,7 +44,7 @@ const TopBanner: React.FC = () => {
   return (
     <>
       {/* <Container> */}
-      {/* <Header /> */}
+      <Header />
       <div
         style={{
           backgroundImage: `linear-gradient(140deg,rgba(0,0,0,.75) 52.45%,rgba(0,0,0,.1) 100%), url('https://stockarea.io/assets/user/images/home/home-cover.png')`,
