@@ -11,10 +11,13 @@ import {
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import { DragHandleRounded, LocalPhone } from "@mui/icons-material";
-import logo from "../../public/images/logo.png";
+// import logo from "../../public/images/logo.png";
+import logo from "../../../public/images/logo.png";
 import Image from "next/image";
-import Container from "./Container/Container";
+import "./Header.scss";
 import { useRouter } from "next/navigation";
+import Container from "../Container/Container";
+import useDimension from "@/app/customHooks/useDimensionHook";
 
 interface HeaderProps {
   // onContactUsClick: () => void;
@@ -107,10 +110,11 @@ const Header: React.FC<HeaderProps> = () => {
   const classes = useStyles();
   const router = useRouter();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
+  const { width, height } = useDimension();
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
+  console.log(width, "widthConsole");
 
   return (
     <AppBar position="static" style={{ background: "#F5F5FA" }}>
@@ -129,7 +133,72 @@ const Header: React.FC<HeaderProps> = () => {
       >
         <Container>
           {/* Desktop Header */}
-          <Toolbar className={classes.desktopNavbar}>
+          {width > 768 && (
+            <div className="desktopHeader">
+              <div className="deskLogo">
+                <Image
+                  onClick={() => {
+                    router.push("/");
+                  }}
+                  alt="logo"
+                  src={logo}
+                  width={50}
+                  height={50}
+                />
+              </div>
+              <div style={{ display: "flex", gap: "51px" }}>
+                <Typography
+                  variant="h6"
+                  style={{
+                    color: "white",
+                    fontSize: "14px",
+                    letterSpacing: "0.2px",
+                  }}
+                >
+                  Products
+                </Typography>
+                <Typography
+                  variant="h6"
+                  style={{
+                    color: "white",
+                    fontSize: "15px",
+                    letterSpacing: "1px",
+                  }}
+                >
+                  Network
+                </Typography>
+                <Typography
+                  variant="h6"
+                  style={{
+                    color: "white",
+                    fontSize: "14px",
+                    letterSpacing: "1px",
+                  }}
+                >
+                  Services
+                </Typography>
+                <Typography
+                  variant="h6"
+                  style={{
+                    color: "white",
+                    fontSize: "14px",
+                    letterSpacing: "1px",
+                  }}
+                >
+                  Resources
+                </Typography>
+              </div>
+              <Button variant="outlined" className={"getStartedButton"}>
+                <Link
+                  href="/contact-us"
+                  style={{ textDecoration: "none", color: "inherit" }}
+                >
+                  <Typography>Contact Us</Typography>
+                </Link>
+              </Button>
+            </div>
+          )}
+          {/* <Toolbar className={classes.desktopNavbar}>
             <div className={classes.logo}>
               <Image
                 onClick={() => {
@@ -190,18 +259,11 @@ const Header: React.FC<HeaderProps> = () => {
               >
                 <Typography>Contact Us</Typography>
               </Link>
-            </Button>{" "}
-          </Toolbar>
+            </Button>
+          </Toolbar> */}
 
           {/* Mobile Header */}
-          <Toolbar className={classes.navbar}>
-            <Image alt="logo" width={50} height={50} src={logo} />
-            <IconButton color="inherit" onClick={toggleMobileMenu}>
-              <DragHandleRounded />
-            </IconButton>
-
-            {/* <LocalPhone /> */}
-          </Toolbar>
+          {width < 768 && ""}
         </Container>
       </div>
       {/* Mobile Menu */}

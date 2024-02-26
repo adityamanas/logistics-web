@@ -6,7 +6,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import Solution from "./Solution";
 import Container from "../Container/Container";
 import { useRouter } from 'next/navigation'
-import Header from "../Header";
+import Header from "../MainHeader/Header";
 
 const useStyles = makeStyles({
   learnMoreButton: {
