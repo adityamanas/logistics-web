@@ -1,10 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import Link from "next/link";
-import { Typography, Button } from "@material-ui/core";
-import { makeStyles } from "@material-ui/core/styles";
 import { DragHandleRounded, LocalPhone } from "@mui/icons-material";
-// import logo from "../../public/images/logo.png";
 import logo from "../../../public/images/logo.png";
 import Image from "next/image";
 import "./Header.scss";
@@ -18,67 +15,10 @@ interface HeaderProps {
   // onContactUsClick: () => void;
 }
 
-const useStyles = makeStyles({
-  navbar: {
-    padding: "0px",
-    display: "none",
-    justifyContent: "space-around",
-    gap: "40px",
-    "@media (max-width: 768px)": {
-      display: "flex",
-      justifyContent: "space-between",
-    },
-  },
-  desktopNavbar: {
-    padding: "0px",
-    background: "#cf5435",
-    maxHeight: "64px",
-    display: "flex",
-    justifyContent: "space-between",
-    alignItems: "center",
-    "@media (max-width: 768px)": {
-      display: "none",
-    },
-  },
-  getStartedButton: {
-    color: "white",
-    padding: "13px 40px",
-    border: "1px solid white",
-    fontWeight: "bold",
-    fontSize: "19px",
-    textTransform: "capitalize",
-    letterSpacing: "1px",
-    "&:hover": {
-      backgroundColor: "white",
-      color: "#ED3232",
-    },
-    "@media (max-width:768px)": {
-      margin: " 0px 12px",
-      marginBottom: "12px",
-    },
-  },
-  logo: {
-    width: "50px",
-    height: "50px",
-  },
-  menuListItem: {
-    "@media (max-width:768px)": {
-      flexDirection: "column!important",
-      paddingTop: "12px",
-      background: "#cf5435",
-      "& h6": {
-        paddingLeft: "12px",
-        "&:hover": {
-          backgroundColor: "white",
-          color: "#ED3232",
-        },
-      },
-    },
-  },
-});
+
 
 const Header: React.FC<HeaderProps> = () => {
-  const classes = useStyles();
+
   const router = useRouter();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { width, height } = useDimension();
@@ -181,7 +121,7 @@ const Header: React.FC<HeaderProps> = () => {
               <Image alt="logo" src={TelIcon} width={30} height={30} />
             </div>
           </div>
-          {width < 768 && ""}
+         
         </Container>
 
         {/* Mobile Menu */}
