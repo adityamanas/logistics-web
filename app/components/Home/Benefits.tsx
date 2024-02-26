@@ -8,9 +8,8 @@ import Icon2 from "../../../public/images/icon2.svg";
 import Icon3 from "../../../public/images/icon3.svg";
 import Icon4 from "../../../public/images/icon4.svg";
 import Image from "next/image";
-import { dir } from "console";
 
-const useStyles = makeStyles({
+const styles = {
   benefit_icon_main: {
     display: "flex",
     flexDirection: "column",
@@ -27,22 +26,18 @@ const useStyles = makeStyles({
       width: "100%",
     },
   },
-});
+};
 
 const Benefits: React.FC = () => {
-  const classes = useStyles();
-
   return (
     <Container>
       <div style={{ height: "100%", width: "100%", marginTop: "34px" }}>
-        <Typography
-          style={{ fontWeight: "600", textAlign: "center", fontSize: "25px" }}
-        >
+        <p style={{ fontWeight: "600", textAlign: "center", fontSize: "25px" }}>
           Benefits 369 offers as your Logistics Partner
-        </Typography>
+        </p>
         <div
-          className={classes.benefitContainer}
           style={{
+            ...styles.benefitContainer,
             display: "flex",
             gap: "30px",
             paddingTop: "30px",
@@ -51,12 +46,12 @@ const Benefits: React.FC = () => {
         >
           <div>
             <Image
-              className={classes.benefitImage}
+              className={styles.benefitImage}
               alt="benefit"
               src={BenefitImg}
             />
           </div>
-          <div className={classes.benefit_icon_main}>
+          <div style={styles.benefit_icon_main}>
             <div style={{ display: "flex", alignItems: "center" }}>
               <Image alt="icon1" src={Icon1} />
               <div
@@ -67,7 +62,7 @@ const Benefits: React.FC = () => {
                   gap: "10px",
                 }}
               >
-                <Typography
+                <p
                   style={{
                     fontWeight: "600",
                     fontSize: "18px",
@@ -75,7 +70,7 @@ const Benefits: React.FC = () => {
                   }}
                 >
                   Competitive Prices
-                </Typography>
+                </p>
                 <Typography style={{ letterSpacing: "1px" }}>
                   At the most competitive pricing, we provide you with the
                   finest quality and specialised air freight services globally
@@ -92,7 +87,7 @@ const Benefits: React.FC = () => {
                   gap: "10px",
                 }}
               >
-                <Typography
+                <p
                   style={{
                     fontWeight: "600",
                     fontSize: "18px",
@@ -100,11 +95,11 @@ const Benefits: React.FC = () => {
                   }}
                 >
                   Wide Geographical Coverage
-                </Typography>
-                <Typography style={{ letterSpacing: "1px" }}>
+                </p>
+                <p style={{ letterSpacing: "1px" }}>
                   We have a massive network of endpoints that spans the globe,
                   enabling you to conveniently ship to any location in the world
-                </Typography>
+                </p>
               </div>
             </div>
             <div style={{ display: "flex", alignItems: "center" }}>
@@ -117,7 +112,7 @@ const Benefits: React.FC = () => {
                   gap: "10px",
                 }}
               >
-                <Typography
+                <p
                   style={{
                     fontWeight: "600",
                     fontSize: "18px",
@@ -125,12 +120,12 @@ const Benefits: React.FC = () => {
                   }}
                 >
                   Speedy Service
-                </Typography>
-                <Typography style={{ letterSpacing: "1px" }}>
+                </p>
+                <p style={{ letterSpacing: "1px" }}>
                   We ensure streamlined, hassle-free and fast air shipping,
                   offering you a speedy delivery experience even over long
                   distances
-                </Typography>
+                </p>
               </div>
             </div>
             <div style={{ display: "flex", alignItems: "center" }}>
@@ -143,7 +138,7 @@ const Benefits: React.FC = () => {
                   gap: "10px",
                 }}
               >
-                <Typography
+                <p
                   style={{
                     fontWeight: "600",
                     fontSize: "18px",
@@ -151,12 +146,12 @@ const Benefits: React.FC = () => {
                   }}
                 >
                   Security
-                </Typography>
-                <Typography style={{ letterSpacing: "1px" }}>
+                </p>
+                <p style={{ letterSpacing: "1px" }}>
                   We ensure the security of your cargo through periodic
                   inspections and strict supervision, eliminating any
                   possibility of theft or damage
-                </Typography>
+                </p>
               </div>
             </div>
           </div>
