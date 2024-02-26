@@ -1,14 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import Link from "next/link";
-import {
-  AppBar,
-  Toolbar,
-  Typography,
-  Button,
-  IconButton,
-  Grid,
-} from "@material-ui/core";
+import { Typography, Button } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import { DragHandleRounded, LocalPhone } from "@mui/icons-material";
 // import logo from "../../public/images/logo.png";
@@ -18,36 +11,14 @@ import "./Header.scss";
 import { useRouter } from "next/navigation";
 import Container from "../Container/Container";
 import useDimension from "@/app/customHooks/useDimensionHook";
+import Hambug from "../../../public/images/hambug.svg";
+import TelIcon from "../../../public/images/telIcon.png";
 
 interface HeaderProps {
   // onContactUsClick: () => void;
 }
 
 const useStyles = makeStyles({
-  headercontact: {
-    textDecoration: "none",
-    color: "#cf5435",
-    fontSize: "14px",
-    fontWeight: 600,
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "flex-end",
-    marginLeft: "76%",
-    gap: "10px",
-    height: "50px",
-  },
-  number: {
-    color: "black",
-    fontSize: "14px",
-    "@media (max-width: 768px)": {
-      fontSize: "7px",
-    },
-  },
-  phoneIcon: {
-    "@media (max-width: 768px)": {
-      fontSize: "smaller",
-    },
-  },
   navbar: {
     padding: "0px",
     display: "none",
@@ -114,21 +85,22 @@ const Header: React.FC<HeaderProps> = () => {
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
-  console.log(width, "widthConsole");
+  //   console.log(width, "widthConsole");
 
   return (
-    <AppBar position="static" style={{ background: "#F5F5FA" }}>
+    <div style={{ background: "#F5F5FA" }}>
       <Container>
-        <a href="tel:+9112345678" className={classes.headercontact}>
-          <LocalPhone className={classes.phoneIcon} />
-          <Typography className={classes.number} style={{ color: "black" }}>
+        <a href="tel:+9112345678" className={"headercontact"}>
+          <LocalPhone className={"phoneIcon"} />
+          <p className={"number"} style={{ color: "black" }}>
             +91 12345678
-          </Typography>
+          </p>
         </a>
       </Container>
       <div
         style={{
           background: " #cf5435",
+          position:"relative"
         }}
       >
         <Container>
@@ -147,143 +119,123 @@ const Header: React.FC<HeaderProps> = () => {
                 />
               </div>
               <div style={{ display: "flex", gap: "51px" }}>
-                <Typography
-                  variant="h6"
+                <h6
+                  //   variant="h6"
+                  style={{
+                    color: "white",
+                    fontSize: "15px",
+                    letterSpacing: "0.2px",
+                  }}
+                >
+                  Products
+                </h6>
+                <h6
+                  style={{
+                    color: "white",
+                    fontSize: "15px",
+                    letterSpacing: "0.2px",
+                  }}
+                >
+                  Network
+                </h6>
+                <h6
                   style={{
                     color: "white",
                     fontSize: "14px",
                     letterSpacing: "0.2px",
                   }}
                 >
-                  Products
-                </Typography>
-                <Typography
-                  variant="h6"
-                  style={{
-                    color: "white",
-                    fontSize: "15px",
-                    letterSpacing: "1px",
-                  }}
-                >
-                  Network
-                </Typography>
-                <Typography
-                  variant="h6"
-                  style={{
-                    color: "white",
-                    fontSize: "14px",
-                    letterSpacing: "1px",
-                  }}
-                >
                   Services
-                </Typography>
-                <Typography
-                  variant="h6"
+                </h6>
+                <h6
                   style={{
                     color: "white",
                     fontSize: "14px",
-                    letterSpacing: "1px",
+                    letterSpacing: "0.2px",
                   }}
                 >
                   Resources
-                </Typography>
+                </h6>
               </div>
-              <Button variant="outlined" onClick={()=>{
-                router.push("/contact-us")
-              }}  className={"getStartedButton"}>
-              
-                  <Typography>Contact Us</Typography>
-           
-              </Button>
+              <button
+                onClick={() => {
+                  router.push("/contact-us");
+                }}
+                className={"getStartedButton"}
+              >
+                <p>Contact Us</p>
+              </button>
             </div>
           )}
-          {/* <Toolbar className={classes.desktopNavbar}>
-            <div className={classes.logo}>
-              <Image
-                onClick={() => {
-                  router.push("/");
-                }}
-                alt="logo"
-                src={logo}
-                width={50}
-                height={50}
-              />
+
+          {/* Mobile Header */}
+          <div className={"navbar"}>
+            {/* <IconButton color="inherit" > */}
+            <div className="iconMenuBtn" onClick={toggleMobileMenu}>
+              <Image alt="logo" src={Hambug} width={30} height={30} />
             </div>
-            <div style={{ display: "flex", gap: "51px" }}>
-              <Typography
-                variant="h6"
-                style={{
-                  color: "white",
-                  fontSize: "14px",
-                  letterSpacing: "0.2px",
-                }}
-              >
-                Products
-              </Typography>
-              <Typography
-                variant="h6"
-                style={{
-                  color: "white",
-                  fontSize: "15px",
-                  letterSpacing: "1px",
-                }}
-              >
-                Network
-              </Typography>
-              <Typography
-                variant="h6"
-                style={{
-                  color: "white",
-                  fontSize: "14px",
-                  letterSpacing: "1px",
-                }}
-              >
-                Services
-              </Typography>
-              <Typography
-                variant="h6"
-                style={{
-                  color: "white",
-                  fontSize: "14px",
-                  letterSpacing: "1px",
-                }}
-              >
-                Resources
-              </Typography>
+            {/* </IconButton> */}
+
+            <Image alt="logo" src={logo} className={"deskLogo"} />
+            <div className="iconMenuBtn">
+              <Image alt="logo" src={TelIcon} width={30} height={30} />
             </div>
-            <Button variant="outlined" className={classes.getStartedButton}>
+          </div>
+          {width < 768 && ""}
+        </Container>
+
+        {/* Mobile Menu */}
+        {isMobileMenuOpen && (
+          <div className={`headerDrop`}>
+            <h6
+              style={{
+                color: "white",
+                fontSize: "14px",
+                letterSpacing: "0.2px",
+              }}
+            >
+              Products
+            </h6>
+            <h6
+              style={{
+                color: "white",
+                fontSize: "14px",
+                letterSpacing: "0.2px",
+              }}
+            >
+              Network
+            </h6>
+            <h6
+              style={{
+                color: "white",
+                fontSize: "14px",
+                letterSpacing: "0.2px",
+              }}
+            >
+              Services
+            </h6>
+            <h6
+              style={{
+                color: "white",
+                fontSize: "14px",
+                letterSpacing: "0.2px",
+              }}
+            >
+              Resources
+            </h6>
+            {/* Add other menu items as needed */}
+            <button className={"getStartedButton"}>
               <Link
                 href="/contact-us"
                 style={{ textDecoration: "none", color: "inherit" }}
               >
-                <Typography>Contact Us</Typography>
+                <p>Contact Us</p>
               </Link>
-            </Button>
-          </Toolbar> */}
-
-          {/* Mobile Header */}
-          {width < 768 && ""}
-        </Container>
+            </button>
+          </div>
+        )}
       </div>
-      {/* Mobile Menu */}
-      {isMobileMenuOpen && (
-        <div className={`${classes.navbar} ${classes.menuListItem}`}>
-          <Typography variant="h6">Products</Typography>
-          <Typography variant="h6">Network</Typography>
-          <Typography variant="h6">Services</Typography>
-          <Typography variant="h6">Resources</Typography>
-          {/* Add other menu items as needed */}
-          <Button variant="outlined" className={classes.getStartedButton}>
-            <Link
-              href="/contact-us"
-              style={{ textDecoration: "none", color: "inherit" }}
-            >
-              <Typography>Contact Us</Typography>
-            </Link>
-          </Button>{" "}
-        </div>
-      )}
-    </AppBar>
+    </div>
   );
 };
 
