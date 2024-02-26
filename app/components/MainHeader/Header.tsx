@@ -188,13 +188,12 @@ const Header: React.FC<HeaderProps> = () => {
                   Resources
                 </Typography>
               </div>
-              <Button variant="outlined" className={"getStartedButton"}>
-                <Link
-                  href="/contact-us"
-                  style={{ textDecoration: "none", color: "inherit" }}
-                >
+              <Button variant="outlined" onClick={()=>{
+                router.push("/contact-us")
+              }}  className={"getStartedButton"}>
+              
                   <Typography>Contact Us</Typography>
-                </Link>
+           
               </Button>
             </div>
           )}
