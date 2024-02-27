@@ -12,7 +12,7 @@ import Hambug from "../../../public/images/hambug.svg";
 import TelIcon from "../../../public/images/telIcon.png";
 
 interface HeaderProps {
- 
+  // onContactUsClick: () => void;
 }
 
 
