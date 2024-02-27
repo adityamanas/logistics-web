@@ -1,0 +1,19 @@
+.benefit_icon_main{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  gap: 23px;
+}
+.benefitContainer{
+  display: flex;
+  gap: 30px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  @media (min-width:340px) and (max-width:1024px){
+    flex-direction: column;
+  }
+}
+.benefitImage{
+@media (min-width:340px) and (max-width:1024px){
+    width:100%;
+  }}

@@ -2,7 +2,7 @@
 import { Typography } from "@material-ui/core";
 import Storage from "./Storage";
 import { makeStyles } from "@material-ui/core/styles";
-import Benefits from "./Benefits";
+import Benefits from "../Home/Benefit/Benefits";
 import Image from "next/image";
 
 const styles = {
