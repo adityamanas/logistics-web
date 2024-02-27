@@ -5,7 +5,7 @@ import { Button, Typography } from "@material-ui/core";
 import Container from "../Container/Container";
 import { useRouter } from "next/navigation";
 import Header from "../Header";
-import Solution from "./Solution";
+import Solution from "../Home/Solution/Solution";
 
 const styles = {
   learnMoreButton: {

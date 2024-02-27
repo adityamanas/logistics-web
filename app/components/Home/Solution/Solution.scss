@@ -1,0 +1,21 @@
+.learnMoreButton {
+  font-size: 19px;
+  cursor: pointer;
+  :hover {
+    color: #ed3232;
+  }
+}
+.BannerSection {
+  @media (max-width: 768px) {
+    width: "100%!important";
+  }
+  padding: "23px 0px";
+}
+.solutionItems {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: "center";
+  justify-content: center;
+  text-align: center;
+  gap: 70px;
+}
