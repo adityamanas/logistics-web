@@ -25,6 +25,7 @@ const Header: React.FC<HeaderProps> = () => {
   //   console.log(width, "widthConsole");
 
   return (
+    <>
     <div style={{ background: "#F5F5FA" }}>
       <Container>
         <a href="tel:+9112345678" className={"headercontact"}>
@@ -34,6 +35,14 @@ const Header: React.FC<HeaderProps> = () => {
           </p>
         </a>
       </Container>
+      </div>
+      <div 
+      style={{
+        position:"sticky",
+        top:"0",
+        zIndex:1000,
+      }}
+      >
       <div
         style={{
           background: " #cf5435",
@@ -165,7 +174,8 @@ const Header: React.FC<HeaderProps> = () => {
           </div>
         )}
       </div>
-    </div>
+      </div>
+      </>
   );
 };
 
