@@ -14,7 +14,7 @@ import Container from "../Container/Container";
 import { makeStyles } from "@material-ui/core/styles";
 import { Email, LocalPhone, Place } from "@mui/icons-material";
 import Header from "../Header";
-import Footer from "../Footer";
+import Footer from "../MainFooter/Footer";
 
 const useStyles = makeStyles({
   formContainer: {

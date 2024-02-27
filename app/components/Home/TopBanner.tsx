@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import Footer from "../Footer";
+import Footer from "../MainFooter/Footer";
 import { Button, Typography } from "@material-ui/core";
 import Container from "../Container/Container";
 import { useRouter } from "next/navigation";
