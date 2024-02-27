@@ -1,7 +1,6 @@
 "use client";
 import { Typography } from "@material-ui/core";
-import Storage from "./Storage";
-import Benefits from "../Home/Benefit/Benefits";
+
 import Image from "next/image";
 
 const Solution: React.FC = () => {
