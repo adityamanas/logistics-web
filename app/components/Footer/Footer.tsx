@@ -99,11 +99,11 @@ const Footer: React.FC = () => {
               </Typography>
             </div>
             <div>
-              <img
+              {/* <img
                 src="https://stockarea.io/assets/user/images/footer/google-play-badge.png"
                 alt="playstore"
                 style={{ height: "15vh" }}
-              />
+              /> */}
             </div>
           </div>
           {/* <br style={{ border: "1px solid white" }} /> */}
