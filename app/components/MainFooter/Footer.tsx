@@ -84,7 +84,7 @@ const Footer: React.FC = () => {
               <h2 style={{ fontWeight: "bold" }}>
                 Book Trucks On Transport Area
               </h2>
-              <p style={{ width: "43vw", paddingTop: "12px",textAlign:"center" }}>
+              <p style={{ width: "43vw", paddingTop: "12px" }}>
                 TransportArea is your digital transporter for booking Full-Truck
                 Loads across India. Enjoy instant credits upto ₹5,00,000 and
                 book your first truck now.
@@ -132,7 +132,7 @@ const Footer: React.FC = () => {
                 style={{ display: "flex", alignItems: "center", gap: "10px" }}
               >
                 <Email />
-                <p>hello@stockarea.io</p>
+                <p>hello@369logistics.io</p>
               </div>
               <div
                 style={{ display: "flex", alignItems: "center", gap: "10px" }}

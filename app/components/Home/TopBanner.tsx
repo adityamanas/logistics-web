@@ -9,6 +9,9 @@ import Solution from "./Solution";
 import Header from "../MainHeader/Header";
 import "./Home.scss"
 
+import Storage from "./Storage/Storage";
+import Benefits from "./Benefit/Benefits";
+
 const styles = {
   learnMoreButton: {
     fontSize: "19px",
@@ -26,16 +29,7 @@ const styles = {
       width: "62vw!important",
     },
   },
-  bannerHead: {
-    "@media (max-width: 768px)": {
-      fontSize: "35px",
-    },
-  },
-  bannerCaption: {
-    "@media (max-width: 768px)": {
-      fontSize: "18px",
-    },
-  },
+ 
 };
 
 const TopBanner = () => {
@@ -64,34 +58,19 @@ const TopBanner = () => {
           <Container>
             <div
             className="topBannerImg"
-              // style={{
-              //   // ...styles.BannerSection,
-              //   justifyContent: "center",
-              //   height: "100%",
-              //   color: "#fff",
-              //   display: "flex",
-              //   flexDirection: "column",
-              //   gap: "20px",
-              //   padding: "5% 0%",
-              //   width: "40vw",
-              // }}
+         
             >
               <p
-                style={{
-                  ...styles.bannerHead,
-                  fontWeight: "bolder",
-                  fontSize: "40px",
-                }}
+              className="bannerHead"
+            
               >
                 Supply Chain Solutions to Design, Execute & Optimise your
                 Inventory Flow
               </p>
               <p
+              className="bannerCaption"
                 style={{
-                  ...styles.bannerCaption,
-                  fontSize: "20px",
-                  color: "#C8C8C8",
-                  fontWeight: 500,
+                 
                 }}
               >
                 We are your Tech-enabled partner for storage & movement of goods
@@ -101,19 +80,9 @@ const TopBanner = () => {
                 style={{ display: "flex", alignItems: "center", gap: "100px" }}
               >
                 <button
+                className="talkToUsBtn"
                   onClick={() => router.push("/contact-us")}
-                  style={{
-                    background: "#cf5435",
-                    color: "white",
-                    padding: "13px 40px",
-                    fontWeight: "bold",
-                    fontSize: "19px",
-                    textTransform: "capitalize",
-                    letterSpacing: "1px",
-                    border: "none",
-                    borderRadius: "5px",
-                    height: "60px",
-                  }}
+
                 >
                   Talk To Us
                 </button>
@@ -122,7 +91,11 @@ const TopBanner = () => {
           </Container>
         </div>
       </div>
+      <Container>
       <Solution />
+      <Benefits />
+      </Container>
+      <Storage />
       <Footer />
     </>
   );
