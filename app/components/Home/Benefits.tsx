@@ -51,7 +51,7 @@ const Benefits: React.FC = () => {
               src={BenefitImg}
             />
           </div>
-          <div style={styles.benefit_icon_main}>
+          <div style={{ ...styles.benefit_icon_main }}>
             <div style={{ display: "flex", alignItems: "center" }}>
               <Image alt="icon1" src={Icon1} />
               <div

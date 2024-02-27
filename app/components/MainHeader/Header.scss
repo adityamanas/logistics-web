@@ -1,0 +1,117 @@
+.desktopHeader {
+  display: flex;
+  padding: 0px;
+  background: #cf5435;
+  min-height: 64px;
+  align-items: center;
+  justify-content: space-between;
+  .getStartedButton {
+    color: white;
+    border: 1px solid white;
+    background-color: transparent;
+    border-radius: 4px;
+    padding: 13px 40px;
+    font-size: 19px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    cursor: pointer;
+    text-transform: capitalize;
+    p {
+      font-size: 1rem;
+      font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+      font-weight: 400;
+      line-height: 1.5;
+      letter-spacing: 0.00938em;
+    }
+    :hover {
+      //   background-color: white;
+      //   color: #ed3232;
+    }
+    @media (max-width: 768px) {
+      margin: 0px 12px 12px 12px;
+    }
+  }
+}
+.getStartedButton {
+    color: white;
+    border: 1px solid white;
+    background-color: transparent;
+    border-radius: 4px;
+    padding: 13px 40px;
+    font-size: 19px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    cursor: pointer;
+    text-transform: capitalize;
+    p {
+      font-size: 1rem;
+      font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+      font-weight: 400;
+      line-height: 1.5;
+      letter-spacing: 0.00938em;
+    }
+    :hover {
+      //   background-color: white;
+      //   color: #ed3232;
+    }
+    @media (max-width: 768px) {
+      margin: 0px 12px 12px 12px;
+    }
+  }
+  .headerDrop{
+    position: absolute;
+    padding: 0px 15px;
+    top: 64px;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+    background: #cf5435;
+    padding-top: 12px;
+    flex-direction: column!important;
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+  }
+.deskLogo {
+  width: 50px;
+  height: 50px;
+}
+.headercontact {
+  gap: 10px;
+  color: #cf5435;
+  height: 50px;
+  display: flex;
+  font-size: 14px;
+  align-items: center;
+  font-weight: 600;
+//   margin-left: 76%;
+  justify-content: flex-end;
+  text-decoration: none;
+  .phoneIcon {
+    @media (max-width: 768px) {
+      font-size: smaller;
+    }
+  }
+  .number {
+    color: black;
+    font-size: 14px;
+    @media (max-width: 768px) {
+      font-size: 12px;
+    }
+  }
+}
+.navbar {
+  padding: 10px 0px;
+  display: none;
+  justify-content: space-around;
+  gap: 40px;
+  @media (max-width: 768px) {
+    display: flex;
+    justify-content: space-between;
+  }
+  .iconMenuBtn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
