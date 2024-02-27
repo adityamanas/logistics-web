@@ -4,8 +4,9 @@ import Footer from "../Footer";
 import { Button, Typography } from "@material-ui/core";
 import Container from "../Container/Container";
 import { useRouter } from "next/navigation";
-import Header from "../Header";
+// import Header from "../Header";
 import Solution from "./Solution";
+import Header from "../MainHeader/Header";
 
 const styles = {
   learnMoreButton: {
