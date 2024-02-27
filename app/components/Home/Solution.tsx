@@ -1,11 +1,11 @@
 "use client";
-
 import { Typography } from "@material-ui/core";
 import Storage from "./Storage";
 import { makeStyles } from "@material-ui/core/styles";
 import Benefits from "./Benefits";
+import Image from "next/image";
 
-const useStyles = makeStyles({
+const styles = {
   learnMoreButton: {
     fontSize: "19px",
     cursor: "pointer",
@@ -22,10 +22,10 @@ const useStyles = makeStyles({
   solutionItem: {
     flexWrap: "wrap",
   },
-});
+};
 
 const Solution: React.FC = () => {
-  const classes = useStyles();
+  // const classes = useStyles();
 
   return (
     <>
@@ -38,20 +38,24 @@ const Solution: React.FC = () => {
           padding: "5%",
         }}
       >
-        <div style={{ textAlign: "center" }}>
-          <Typography
-            variant="h5"
-            style={{ fontWeight: "600", letterSpacing: "1px" }}
-          >
+        <div
+          style={{
+            textAlign: "center",
+            display: "flex",
+            flexDirection: "column",
+            gap: "20px",
+          }}
+        >
+          <h1 style={{ fontWeight: "600" }}>
             Tailor-Made Solutions to stay ahead of the competiton
-          </Typography>
-          <Typography style={{ fontSize: "18px" }}>
+          </h1>
+          <p style={{ fontSize: "18px" }}>
             We cater to business from SME to Enterprise
-          </Typography>
+          </p>
         </div>
         <div
-          className={classes.solutionItem}
           style={{
+            ...styles.solutionItem,
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
@@ -60,49 +64,49 @@ const Solution: React.FC = () => {
           }}
         >
           <div>
-            <img
+            <Image
               src="https://stockarea.io/assets/user/images/home/manufacturers.svg"
-              alt=""
+              alt="manufacturers"
+              height={70}
+              width={70}
             />
-            <Typography style={{ fontSize: "16px", fontWeight: "600" }}>
-              Manufacturers
-            </Typography>
+            <p style={{ fontSize: "18px", fontWeight: "600" }}>Manufacturers</p>
           </div>
           <div>
-            <img
+            <Image
               src="https://stockarea.io/assets/user/images/home/distributors.svg"
-              alt=""
+              alt="distributors"
+              height={70}
+              width={70}
             />
-            <Typography style={{ fontSize: "16px", fontWeight: "600" }}>
-              Distributors
-            </Typography>
+            <p style={{ fontSize: "18px", fontWeight: "600" }}>Distributors</p>
           </div>
           <div>
-            <img
+            <Image
               src="https://stockarea.io/assets/user/images/home/traders.svg"
-              alt=""
+              alt="traders"
+              height={70}
+              width={70}
             />
-            <Typography style={{ fontSize: "16px", fontWeight: "600" }}>
-              Traders
-            </Typography>
+            <p style={{ fontSize: "18px", fontWeight: "600" }}>Traders</p>
           </div>
           <div>
-            <img
+            <Image
               src="https://stockarea.io/assets/user/images/home/importers.svg"
-              alt=""
+              alt="importers"
+              height={70}
+              width={70}
             />
-            <Typography style={{ fontSize: "16px", fontWeight: "600" }}>
-              Importers
-            </Typography>
+            <p style={{ fontSize: "18px", fontWeight: "600" }}>Importers</p>
           </div>
           <div>
-            <img
+            <Image
               src="https://stockarea.io/assets/user/images/home/exporters.svg"
-              alt=""
+              alt="exporters"
+              height={70}
+              width={70}
             />
-            <Typography style={{ fontSize: "16px", fontWeight: "600" }}>
-              Exporters
-            </Typography>
+            <p style={{ fontSize: "18px", fontWeight: "600" }}>Exporters</p>
           </div>
         </div>
       </div>

@@ -10,10 +10,11 @@ import {
 } from "@mui/icons-material";
 import Container from "./Container/Container";
 import logo from "../../public/images/logo.png";
+import playstore from "../../public/images/playstore.png";
 import Image from "next/image";
 import { makeStyles } from "@material-ui/core/styles";
 
-const useStyles = makeStyles({
+const styles = {
   footerHeading: {
     "@media (max-width:768px)": {
       flexDirection: "column!important",
@@ -56,10 +57,9 @@ const useStyles = makeStyles({
     height: "40px",
     backgroundColor: "#cf5435",
   },
-});
+};
 
 const Footer: React.FC = () => {
-  const classes = useStyles();
   return (
     // <Container>
     <footer
@@ -80,8 +80,8 @@ const Footer: React.FC = () => {
           }}
         >
           <div
-            className={classes.footerHeading}
             style={{
+              ...styles.footerHeading,
               display: "flex",
               alignItems: "center",
               justifyContent: "space-between",
@@ -89,17 +89,14 @@ const Footer: React.FC = () => {
             }}
           >
             <div>
-              <Typography variant="h4" style={{ fontWeight: "bold" }}>
+              <h1 style={{ fontWeight: "bold" }}>
                 Book Trucks On Transport Area
-              </Typography>
-              <Typography
-                variant="h6"
-                style={{ fontSize: "18px", width: "43vw" }}
-              >
+              </h1>
+              <h3 style={{ fontSize: "18px", width: "43vw" }}>
                 TransportArea is your digital transporter for booking Full-Truck
                 Loads across India. Enjoy instant credits upto ₹5,00,000 and
                 book your first truck now.
-              </Typography>
+              </h3>
             </div>
             <div>
               {/* <img
@@ -111,8 +108,8 @@ const Footer: React.FC = () => {
           </div>
           {/* <br style={{ border: "1px solid white" }} /> */}
           <div
-            className={classes.footerListItemSection}
             style={{
+              ...styles.footerListItemSection,
               display: "flex",
               justifyContent: "space-between",
             }}
@@ -133,8 +130,8 @@ const Footer: React.FC = () => {
                 <div
                   style={{
                     backgroundColor: "#cf5435",
-                    width:"50px",
-                    height:"50px"
+                    width: "50px",
+                    height: "50px",
                   }}
                 >
                   <Image alt="logo" src={logo} height={50} width={50} />
@@ -144,22 +141,22 @@ const Footer: React.FC = () => {
                 style={{ display: "flex", alignItems: "center", gap: "10px" }}
               >
                 <LocationOn />
-                <Typography style={{ width: "15vw" }}>
+                <p style={{ width: "15vw" }}>
                   Plot No. 28, Ground Floor, Blok B, Road No. 2, Pochanpur
                   Extension, New Delhi, 110077
-                </Typography>
+                </p>
               </div>
               <div
                 style={{ display: "flex", alignItems: "center", gap: "10px" }}
               >
                 <Email />
-                <Typography>hello@stockarea.io</Typography>
+                <p>hello@stockarea.io</p>
               </div>
               <div
                 style={{ display: "flex", alignItems: "center", gap: "10px" }}
               >
                 <LocalPhone />
-                <Typography>+91 123-456-789</Typography>
+                <p>+91 123-456-789</p>
               </div>
               <div style={{ display: "flex", gap: "30px" }}>
                 <LinkedIn />
@@ -170,58 +167,56 @@ const Footer: React.FC = () => {
             <div
               style={{ display: "flex", flexDirection: "column", gap: "10px" }}
             >
-              <Typography variant="h6" style={{ fontWeight: "bold" }}>
-                Solutions
-              </Typography>
-              <Typography>Fulfillment</Typography>
-              <Typography>Storage</Typography>
-              <Typography>Lease Space</Typography>
-              <Typography>WPR</Typography>
-              <Typography>Warehouse provider</Typography>
+              <h3 style={{ fontWeight: "bold" }}>Solutions</h3>
+              <p>Fulfillment</p>
+              <p>Storage</p>
+              <p>Lease Space</p>
+              <p>WPR</p>
+              <p>Warehouse provider</p>
             </div>
             <div
               style={{ display: "flex", flexDirection: "column", gap: "10px" }}
             >
-              <Typography variant="h6" style={{ fontWeight: "bold" }}>
-                Resources
-              </Typography>
-              <Typography>Quick Guides</Typography>
-              <Typography>Blog</Typography>
-              <Typography>FAQ's</Typography>
-              <Typography>Glossary</Typography>
+              <h3 style={{ fontWeight: "bold" }}>Resources</h3>
+              <p>Quick Guides</p>
+              <p>Blog</p>
+              <p>FAQ's</p>
+              <p>Glossary</p>
             </div>
             <div
               style={{ display: "flex", flexDirection: "column", gap: "10px" }}
             >
-              <Typography variant="h6" style={{ fontWeight: "bold" }}>
-                Company
-              </Typography>
-              <Typography>About Us</Typography>
+              <h3 style={{ fontWeight: "bold" }}>Company</h3>
+              <p>About Us</p>
             </div>
           </div>
           <div
-            className={classes.footerCopyrightSection}
-            style={{ display: "flex", justifyContent: "space-between" }}
+            style={{
+              ...styles.footerCopyrightSection,
+              display: "flex",
+              justifyContent: "space-between",
+            }}
           >
-            <Typography
-              style={{ color: "gray", fontSize: "15px", fontWeight: "bold" }}
-            >
+            <p style={{ color: "gray", fontSize: "15px", fontWeight: "bold" }}>
               &copy; 2023 369 Logistics. All rights reserved.
-            </Typography>
+            </p>
             <div
-              className={classes.footerConditionPrivacy}
-              style={{ display: "flex", gap: "30px" }}
+              style={{
+                ...styles.footerConditionPrivacy,
+                display: "flex",
+                gap: "30px",
+              }}
             >
-              <Typography
+              <p
                 style={{ color: "gray", fontSize: "15px", fontWeight: "bold" }}
               >
                 Terms of Service
-              </Typography>
-              <Typography
+              </p>
+              <p
                 style={{ color: "gray", fontSize: "15px", fontWeight: "bold" }}
               >
                 Privacy Policy
-              </Typography>
+              </p>
             </div>
           </div>
         </div>

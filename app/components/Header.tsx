@@ -113,7 +113,8 @@ const Header: React.FC<HeaderProps> = () => {
   };
 
   return (
-    <AppBar position="static" style={{ background: "#F5F5FA" }}>
+    // <AppBar position="static" style={{ background: "#F5F5FA" }}>
+    <div style={{ background: "#F5F5FA" }}>
       <Container>
         <a href="tel:+9112345678" className={classes.headercontact}>
           <LocalPhone className={classes.phoneIcon} />
@@ -129,7 +130,8 @@ const Header: React.FC<HeaderProps> = () => {
       >
         <Container>
           {/* Desktop Header */}
-          <Toolbar className={classes.desktopNavbar}>
+          {/* <Toolbar className={classes.desktopNavbar}> */}
+          <div className={classes.desktopNavbar}>
             <div className={classes.logo}>
               <Image
                 onClick={() => {
@@ -191,17 +193,18 @@ const Header: React.FC<HeaderProps> = () => {
                 <Typography>Contact Us</Typography>
               </Link>
             </Button>{" "}
-          </Toolbar>
+          </div>
 
           {/* Mobile Header */}
-          <Toolbar className={classes.navbar}>
+          {/* <Toolbar className={classes.navbar}> */}
+          <div className={classes.navbar}>
             <Image alt="logo" width={50} height={50} src={logo} />
             <IconButton color="inherit" onClick={toggleMobileMenu}>
               <DragHandleRounded />
             </IconButton>
 
             {/* <LocalPhone /> */}
-          </Toolbar>
+          </div>
         </Container>
       </div>
       {/* Mobile Menu */}
@@ -222,7 +225,8 @@ const Header: React.FC<HeaderProps> = () => {
           </Button>{" "}
         </div>
       )}
-    </AppBar>
+      {/* </AppBar> */}
+    </div>
   );
 };
 
