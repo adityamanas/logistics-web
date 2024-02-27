@@ -7,6 +7,7 @@ import { useRouter } from "next/navigation";
 // import Header from "../Header";
 import Solution from "./Solution";
 import Header from "../MainHeader/Header";
+import "./Home.scss"
 
 const styles = {
   learnMoreButton: {
@@ -63,17 +64,17 @@ const TopBanner = () => {
           <Container>
             <div
             className="topBannerImg"
-              style={{
-                // ...styles.BannerSection,
-                justifyContent: "center",
-                height: "100%",
-                color: "#fff",
-                display: "flex",
-                flexDirection: "column",
-                gap: "20px",
-                padding: "5% 0%",
-                width: "40vw",
-              }}
+              // style={{
+              //   // ...styles.BannerSection,
+              //   justifyContent: "center",
+              //   height: "100%",
+              //   color: "#fff",
+              //   display: "flex",
+              //   flexDirection: "column",
+              //   gap: "20px",
+              //   padding: "5% 0%",
+              //   width: "40vw",
+              // }}
             >
               <p
                 style={{

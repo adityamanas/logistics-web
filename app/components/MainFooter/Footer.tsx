@@ -84,18 +84,18 @@ const Footer: React.FC = () => {
               <h2 style={{ fontWeight: "bold" }}>
                 Book Trucks On Transport Area
               </h2>
-              <p style={{ width: "43vw", paddingTop: "12px" }}>
+              <p style={{ width: "43vw", paddingTop: "12px",textAlign:"center" }}>
                 TransportArea is your digital transporter for booking Full-Truck
                 Loads across India. Enjoy instant credits upto ₹5,00,000 and
                 book your first truck now.
               </p>
             </div>
             <div className="footerImage">
-              <img
+              {/* <img
                 src="https://stockarea.io/assets/user/images/footer/google-play-badge.png"
                 alt="playstore"
                 style={{ width: "90%", float: "right" }}
-              />
+              /> */}
             </div>
           </div>
           {/* <br style={{ border: "1px solid white" }} /> */}
@@ -108,11 +108,7 @@ const Footer: React.FC = () => {
               }}
             >
               <div>
-                {/* <img
-                  src="https://stockarea.io/assets/user/images/footer/stockarea-logo.png"
-                  alt="logo"
-                  style={{ height: "5vh" }}
-                /> */}
+               
                 <div
                   style={{
                     backgroundColor: "#cf5435",
