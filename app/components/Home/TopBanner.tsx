@@ -62,8 +62,9 @@ const TopBanner = () => {
           {" "}
           <Container>
             <div
+            className="topBannerImg"
               style={{
-                ...styles.BannerSection,
+                // ...styles.BannerSection,
                 justifyContent: "center",
                 height: "100%",
                 color: "#fff",
