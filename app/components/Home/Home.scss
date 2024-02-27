@@ -1,0 +1,49 @@
+.topBannerImg {
+  justify-content: center;
+  height: 100%;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 5% 0%;
+  width: 40vw;
+  @media (max-width: 768px) {
+    width: 100% !important;
+  }
+  .bannerHead {
+    font-weight: bolder;
+    font-size: 40px;
+    @media (max-width: 768px) {
+      font-size: 35px;
+    }
+  }
+  .bannerCaption {
+    font-size: 20px;
+    color: #C8C8C8;
+    font-size: 500;
+    @media (max-width: 768px) {
+      font-size: 18px;
+    }
+  }
+
+  @media (min-width: 769px) and (max-width: 1024px) {
+    width: 62vw !important;
+  }
+  .talkToUsBtn{
+    background: #cf5435;
+    color: white;
+    padding: 13px 40px;
+    font-weight: bold;
+    font-size: 19px;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    border: none;
+    border-radius: 5px;
+    height: 60px;
+    @media (max-width: 768px) {
+      font-size: 15px;
+      padding: 13px 30px;
+      height: 50px;
+    }
+  }
+}

@@ -11,7 +11,7 @@ import "./Benefits.scss";
 const Benefits: React.FC = () => {
   return (
     <Container>
-      <div style={{ height: "100%", width: "100%", marginTop: "34px" }}>
+      <div id="about"  style={{ height: "100%", width: "100%", marginTop: "34px" }}>
         <p style={{ fontWeight: "600", textAlign: "center", fontSize: "25px" }}>
           Benefits 369 offers as your Logistics Partner
         </p>

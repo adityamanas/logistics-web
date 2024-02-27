@@ -1,7 +1,5 @@
 "use client";
-import { Typography } from "@material-ui/core";
 import Storage from "../Solution/Solution";
-import { makeStyles } from "@material-ui/core/styles";
 import Benefits from "../Benefit/Benefits";
 import Image from "next/image";
 import "./Solution.scss";

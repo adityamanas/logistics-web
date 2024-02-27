@@ -91,11 +91,11 @@ const Footer: React.FC = () => {
               </p>
             </div>
             <div className="footerImage">
-              <img
+              {/* <img
                 src="https://stockarea.io/assets/user/images/footer/google-play-badge.png"
                 alt="playstore"
                 style={{ width: "90%", float: "right" }}
-              />
+              /> */}
             </div>
           </div>
           {/* <br style={{ border: "1px solid white" }} /> */}
@@ -108,11 +108,7 @@ const Footer: React.FC = () => {
               }}
             >
               <div>
-                {/* <img
-                  src="https://stockarea.io/assets/user/images/footer/stockarea-logo.png"
-                  alt="logo"
-                  style={{ height: "5vh" }}
-                /> */}
+               
                 <div
                   style={{
                     backgroundColor: "#cf5435",
@@ -136,7 +132,7 @@ const Footer: React.FC = () => {
                 style={{ display: "flex", alignItems: "center", gap: "10px" }}
               >
                 <Email />
-                <p>hello@stockarea.io</p>
+                <p>hello@369logistics.io</p>
               </div>
               <div
                 style={{ display: "flex", alignItems: "center", gap: "10px" }}

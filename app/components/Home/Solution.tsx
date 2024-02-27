@@ -1,35 +1,13 @@
 "use client";
 import { Typography } from "@material-ui/core";
-import Storage from "./Storage";
-import { makeStyles } from "@material-ui/core/styles";
-import Benefits from "../Home/Benefit/Benefits";
+
 import Image from "next/image";
 
-const styles = {
-  learnMoreButton: {
-    fontSize: "19px",
-    cursor: "pointer",
-    "&:hover": {
-      color: "#ED3232",
-    },
-  },
-  BannerSection: {
-    "@media (max-width: 768px)": {
-      width: "100%!important",
-    },
-    padding: "23px 0px",
-  },
-  solutionItem: {
-    flexWrap: "wrap",
-  },
-};
-
 const Solution: React.FC = () => {
-  // const classes = useStyles();
-
   return (
     <>
-      <div
+      <div 
+      id="services"
         style={{
           display: "flex",
           flexDirection: "column",
@@ -55,11 +33,12 @@ const Solution: React.FC = () => {
         </div>
         <div
           style={{
-            ...styles.solutionItem,
+            // ...styles.solutionItem,
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
             textAlign: "center",
+            flexWrap: "wrap",
             gap: "70px",
           }}
         >
@@ -110,8 +89,6 @@ const Solution: React.FC = () => {
           </div>
         </div>
       </div>
-      <Benefits />
-      <Storage />
     </>
   );
 };

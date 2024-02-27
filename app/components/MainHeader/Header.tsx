@@ -1,10 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import Link from "next/link";
-import { Typography, Button } from "@material-ui/core";
-import { makeStyles } from "@material-ui/core/styles";
 import { DragHandleRounded, LocalPhone } from "@mui/icons-material";
-// import logo from "../../public/images/logo.png";
 import logo from "../../../public/images/logo.png";
 import Image from "next/image";
 import "./Header.scss";
@@ -18,67 +15,7 @@ interface HeaderProps {
   // onContactUsClick: () => void;
 }
 
-const useStyles = makeStyles({
-  navbar: {
-    padding: "0px",
-    display: "none",
-    justifyContent: "space-around",
-    gap: "40px",
-    "@media (max-width: 768px)": {
-      display: "flex",
-      justifyContent: "space-between",
-    },
-  },
-  desktopNavbar: {
-    padding: "0px",
-    background: "#cf5435",
-    maxHeight: "64px",
-    display: "flex",
-    justifyContent: "space-between",
-    alignItems: "center",
-    "@media (max-width: 768px)": {
-      display: "none",
-    },
-  },
-  getStartedButton: {
-    color: "white",
-    padding: "13px 40px",
-    border: "1px solid white",
-    fontWeight: "bold",
-    fontSize: "19px",
-    textTransform: "capitalize",
-    letterSpacing: "1px",
-    "&:hover": {
-      backgroundColor: "white",
-      color: "#ED3232",
-    },
-    "@media (max-width:768px)": {
-      margin: " 0px 12px",
-      marginBottom: "12px",
-    },
-  },
-  logo: {
-    width: "50px",
-    height: "50px",
-  },
-  menuListItem: {
-    "@media (max-width:768px)": {
-      flexDirection: "column!important",
-      paddingTop: "12px",
-      background: "#cf5435",
-      "& h6": {
-        paddingLeft: "12px",
-        "&:hover": {
-          backgroundColor: "white",
-          color: "#ED3232",
-        },
-      },
-    },
-  },
-});
-
 const Header: React.FC<HeaderProps> = () => {
-  const classes = useStyles();
   const router = useRouter();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { width, height } = useDimension();
@@ -88,6 +25,7 @@ const Header: React.FC<HeaderProps> = () => {
   //   console.log(width, "widthConsole");
 
   return (
+    <>
     <div style={{ background: "#F5F5FA" }}>
       <Container>
         <a href="tel:+9112345678" className={"headercontact"}>
@@ -97,10 +35,18 @@ const Header: React.FC<HeaderProps> = () => {
           </p>
         </a>
       </Container>
+      </div>
+      <div 
+      style={{
+        position:"sticky",
+        top:"0",
+        zIndex:1000,
+      }}
+      >
       <div
         style={{
           background: " #cf5435",
-          position:"relative"
+          position: "relative",
         }}
       >
         <Container>
@@ -118,94 +64,83 @@ const Header: React.FC<HeaderProps> = () => {
                   height={50}
                 />
               </div>
-              <div style={{ display: "flex", gap: "51px" }}>
-                <h6
-                  //   variant="h6"
-                  style={{
-                    color: "white",
-                    fontSize: "15px",
-                    letterSpacing: "0.2px",
-                  }}
-                >
-                  Products
-                </h6>
-                <h6
-                  style={{
-                    color: "white",
-                    fontSize: "15px",
-                    letterSpacing: "0.2px",
-                  }}
-                >
-                  Network
-                </h6>
-                <h6
-                  style={{
-                    color: "white",
-                    fontSize: "14px",
-                    letterSpacing: "0.2px",
-                  }}
-                >
-                  Services
-                </h6>
-                <h6
-                  style={{
-                    color: "white",
-                    fontSize: "14px",
-                    letterSpacing: "0.2px",
-                  }}
-                >
-                  Resources
-                </h6>
-              </div>
-              <button
-                onClick={() => {
-                  router.push("/contact-us");
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "21px",
                 }}
-                className={"getStartedButton"}
               >
-                <p>Contact Us</p>
-              </button>
+                <div style={{ display: "flex", gap: "21px" }}>
+                  <h6
+                    onClick={() => {
+                      window.location.href = "#services";
+                    }}
+                    //   variant="h6"
+                    style={{
+                      color: "white",
+                      fontSize: "15px",
+                      fontWeight: "500",
+
+                      letterSpacing: "0.2px",
+                      cursor: "pointer",
+                    }}
+                  >
+                    Services
+                  </h6>
+                  <h6
+                    onClick={() => {
+                      window.location.href = "#about";
+                    }}
+                    style={{
+                      color: "white",
+                      fontSize: "15px",
+                      letterSpacing: "0.2px",
+                      cursor: "pointer",
+                      fontWeight: "500",
+                    }}
+                  >
+                    About
+                  </h6>
+                </div>
+
+                <button
+                  onClick={() => {
+                    router.push("/contact-us");
+                  }}
+                  className={"getStartedButton"}
+                >
+                  <p>Contact Us</p>
+                </button>
+              </div>
             </div>
           )}
 
           {/* Mobile Header */}
-          <div className={"navbar"}>
-            {/* <IconButton color="inherit" > */}
-            <div className="iconMenuBtn" onClick={toggleMobileMenu}>
-              <Image alt="logo" src={Hambug} width={30} height={30} />
-            </div>
-            {/* </IconButton> */}
+          {width < 768 && (
+            <div className={"navbar"}>
+              {/* <IconButton color="inherit" > */}
+              <Image alt="logo" src={logo} className={"deskLogo"} />
+              <div className="iconMenuBtn" onClick={toggleMobileMenu}>
+                <Image alt="logo" src={Hambug} width={30} height={30} />
+              </div>
+              {/* </IconButton> */}
 
-            <Image alt="logo" src={logo} className={"deskLogo"} />
-            <div className="iconMenuBtn">
-              <Image alt="logo" src={TelIcon} width={30} height={30} />
+              {/* <div className="iconMenuBtn">
+                <Image alt="logo" src={TelIcon} width={30} height={30} />
+              </div> */}
             </div>
-          </div>
-          {width < 768 && ""}
+          )}
         </Container>
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
           <div className={`headerDrop`}>
             <h6
-              style={{
-                color: "white",
-                fontSize: "14px",
-                letterSpacing: "0.2px",
+              onClick={() => {
+                window.location.href = "#services";
+                toggleMobileMenu();
               }}
-            >
-              Products
-            </h6>
-            <h6
-              style={{
-                color: "white",
-                fontSize: "14px",
-                letterSpacing: "0.2px",
-              }}
-            >
-              Network
-            </h6>
-            <h6
               style={{
                 color: "white",
                 fontSize: "14px",
@@ -215,13 +150,17 @@ const Header: React.FC<HeaderProps> = () => {
               Services
             </h6>
             <h6
+              onClick={() => {
+                window.location.href = "#about";
+                toggleMobileMenu();
+              }}
               style={{
                 color: "white",
                 fontSize: "14px",
                 letterSpacing: "0.2px",
               }}
             >
-              Resources
+              About
             </h6>
             {/* Add other menu items as needed */}
             <button className={"getStartedButton"}>
@@ -235,7 +174,8 @@ const Header: React.FC<HeaderProps> = () => {
           </div>
         )}
       </div>
-    </div>
+      </div>
+      </>
   );
 };
 
