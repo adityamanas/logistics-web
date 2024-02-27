@@ -3,17 +3,13 @@ import {
   Button,
   Card,
   CardContent,
-  TextField,
-  TextareaAutosize,
   Typography,
 } from "@material-ui/core";
-import Image from "next/image";
 import React, { useState } from "react";
-import ContactImg from "../../../public/images/contact-us.png";
 import Container from "../Container/Container";
 import { makeStyles } from "@material-ui/core/styles";
 import { Email, LocalPhone, Place } from "@mui/icons-material";
-import Header from "../Header";
+import Header from "../MainHeader/Header";
 import Footer from "../MainFooter/Footer";
 
 const useStyles = makeStyles({
@@ -135,7 +131,6 @@ const ContactUsForm: React.FC = () => {
     });
   };
 
-  // Function to validate email format
   const validateEmail = (email: string) => {
     const re = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     return re.test(String(email).toLowerCase());
@@ -246,7 +241,7 @@ const ContactUsForm: React.FC = () => {
                 type="name"
                 placeholder="Your Name"
                 style={{
-                  height: "30px",
+                  height: "40px",
                   width: "600px",
                   borderRadius: "5px",
                   border: "1px solid grey",
@@ -261,7 +256,7 @@ const ContactUsForm: React.FC = () => {
                 type="email"
                 placeholder="Your Email"
                 style={{
-                  height: "30px",
+                  height: "40px",
                   width: "600px",
                   borderRadius: "5px",
                   border: "1px solid grey",
@@ -284,7 +279,7 @@ const ContactUsForm: React.FC = () => {
                 type="text"
                 placeholder="Subject"
                 style={{
-                  height: "30px",
+                  height: "40px",
                   borderRadius: "5px",
                   border: "1px solid grey",
                   paddingLeft: "14px",
