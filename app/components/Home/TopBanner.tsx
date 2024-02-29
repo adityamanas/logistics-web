@@ -7,10 +7,11 @@ import { useRouter } from "next/navigation";
 // import Header from "../Header";
 import Solution from "./Solution";
 import Header from "../MainHeader/Header";
-import "./Home.scss"
+import "./Home.scss";
 
 import Storage from "./Storage/Storage";
 import Benefits from "./Benefit/Benefits";
+import ServiceSection from "./ServiceSection/ServiceSection";
 
 const styles = {
   learnMoreButton: {
@@ -29,7 +30,6 @@ const styles = {
       width: "62vw!important",
     },
   },
- 
 };
 
 const TopBanner = () => {
@@ -56,23 +56,12 @@ const TopBanner = () => {
         >
           {" "}
           <Container>
-            <div
-            className="topBannerImg"
-         
-            >
-              <p
-              className="bannerHead"
-            
-              >
+            <div className="topBannerImg">
+              <p className="bannerHead">
                 Supply Chain Solutions to Design, Execute & Optimise your
                 Inventory Flow
               </p>
-              <p
-              className="bannerCaption"
-                style={{
-                 
-                }}
-              >
+              <p className="bannerCaption" style={{}}>
                 We are your Tech-enabled partner for storage & movement of goods
                 across India and Globe.
               </p>
@@ -80,9 +69,8 @@ const TopBanner = () => {
                 style={{ display: "flex", alignItems: "center", gap: "100px" }}
               >
                 <button
-                className="talkToUsBtn"
+                  className="talkToUsBtn"
                   onClick={() => router.push("/contact-us")}
-
                 >
                   Talk To Us
                 </button>
@@ -92,8 +80,9 @@ const TopBanner = () => {
         </div>
       </div>
       <Container>
-      <Solution />
-      <Benefits />
+        <Solution />
+        <Benefits />
+        <ServiceSection />
       </Container>
       <Storage />
       <Footer />
