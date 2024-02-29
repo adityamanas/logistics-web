@@ -14,51 +14,6 @@ import Image from "next/image";
 import { makeStyles } from "@material-ui/core/styles";
 import "./Footer.scss";
 
-// const styles = {
-//   footerHeading: {
-//     "@media (max-width:768px)": {
-//       flexDirection: "column!important",
-//       "& h4": {
-//         textAlign: "center",
-//       },
-//       "& h6": {
-//         width: "100%!important",
-//         padding: "10px 0px",
-//       },
-//       "& img": {
-//         float: "left!important",
-//       },
-//     },
-//   },
-//   footerListItemSection: {
-//     "@media (max-width:768px)": {
-//       flexWrap: "wrap",
-//       rowGap: "34px",
-//       "& p": {
-//         width: "100%!important",
-//       },
-//     },
-//   },
-//   footerCopyrightSection: {
-//     "@media (max-width:768px)": {
-//       flexDirection: "column-reverse!important",
-//       textAlign: "center",
-//     },
-//   },
-//   footerConditionPrivacy: {
-//     "@media (max-width:768px)": {
-//       gap: "0!important",
-//       justifyContent: "space-around",
-//       paddingBottom: "12px",
-//     },
-//   },
-//   logo: {
-//     width: "40px",
-//     height: "40px",
-//     backgroundColor: "#cf5435",
-//   },
-// };
-
 const Footer: React.FC = () => {
   return (
     // <Container>
@@ -108,7 +63,6 @@ const Footer: React.FC = () => {
               }}
             >
               <div>
-               
                 <div
                   style={{
                     backgroundColor: "#cf5435",
