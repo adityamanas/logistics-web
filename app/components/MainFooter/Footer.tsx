@@ -103,7 +103,8 @@ const Footer: React.FC = () => {
             <div
               style={{
                 display: "flex",
-                flexDirection: "column",
+                flexDirection: "row",
+                justifyContent:"space-between",
                 gap: "20px",
               }}
             >
@@ -146,7 +147,7 @@ const Footer: React.FC = () => {
                 <Email />
               </div>
             </div>
-            <div
+            {/* <div
               className="footerList"
               style={{ display: "flex", flexDirection: "column", gap: "10px" }}
             >
@@ -177,7 +178,7 @@ const Footer: React.FC = () => {
             >
               <h6 style={{ fontWeight: "bold", fontSize: "18px" }}>Company</h6>
               <p>About Us</p>
-            </div>
+            </div> */}
           </div>
           <div className="footerCopyrightSection">
             <p style={{ color: "gray", fontSize: "15px", fontWeight: "bold" }}>
