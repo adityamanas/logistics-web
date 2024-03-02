@@ -60,7 +60,10 @@ const Footer: React.FC = () => {
                 display: "flex",
                 flexDirection: "row",
                 justifyContent:"space-between",
+                alignItems:"flex-start",
                 gap: "20px",
+                width:"100%",
+                flexWrap:"wrap"
               }}
             >
               <div>
