@@ -39,8 +39,10 @@ const TopBanner = () => {
     <>
       <Header />
       <div
+      className="background-container-home"
         style={{
-          backgroundImage: `linear-gradient(140deg,rgba(0,0,0,.75) 52.45%,rgba(0,0,0,.1) 100%), url('https://stockarea.io/assets/user/images/home/home-cover.png')`,
+          // backgroundImage: `linear-gradient(140deg,rgba(0,0,0,.75) 52.45%,rgba(0,0,0,.1) 100%)
+          // , url('https://stockarea.io/assets/user/images/home/home-cover.png')`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           height: "100%",
@@ -58,12 +60,10 @@ const TopBanner = () => {
           <Container>
             <div className="topBannerImg">
               <p className="bannerHead">
-                Supply Chain Solutions to Design, Execute & Optimise your
-                Inventory Flow
+               Offer comprehensive inventory management solutions, optimizing your supply chain flow.
               </p>
               <p className="bannerCaption" style={{}}>
-                We are your Tech-enabled partner for storage & movement of goods
-                across India and Globe.
+              Serve as your technology-driven ally for storage and logistics across India and globally.
               </p>
               <div
                 style={{ display: "flex", alignItems: "center", gap: "100px" }}
@@ -80,9 +80,9 @@ const TopBanner = () => {
         </div>
       </div>
       <Container>
+        <ServiceSection />
         <Solution />
         <Benefits />
-        <ServiceSection />
       </Container>
       <Storage />
       <Footer />

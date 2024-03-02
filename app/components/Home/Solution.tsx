@@ -7,7 +7,7 @@ const Solution: React.FC = () => {
   return (
     <>
       <div 
-      id="services"
+       id="about"
         style={{
           display: "flex",
           flexDirection: "column",

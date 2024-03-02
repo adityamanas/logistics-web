@@ -8,6 +8,7 @@ const Solution: React.FC = () => {
   return (
     <>
       <div
+      id="about"
         style={{
           display: "flex",
           flexDirection: "column",

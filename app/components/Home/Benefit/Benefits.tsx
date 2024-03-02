@@ -11,7 +11,7 @@ import "./Benefits.scss";
 const Benefits: React.FC = () => {
   return (
     <Container>
-      <div id="about"  style={{ height: "100%", width: "100%", marginTop: "34px" }}>
+      <div style={{ height: "100%", width: "100%", marginTop: "34px" }}>
         <p style={{ fontWeight: "600", textAlign: "center", fontSize: "25px" }}>
           Benefits 369 offers as your Logistics Partner
         </p>
@@ -40,8 +40,9 @@ const Benefits: React.FC = () => {
                   Competitive Prices
                 </p>
                 <p style={{ letterSpacing: "1px" }}>
-                  At the most competitive pricing, we provide you with the
-                  finest quality and specialised air freight services globally
+                  Delivering unparalleled quality and specialized air freight
+                  services worldwide, we ensure the utmost excellence at highly
+                  competitive rates.
                 </p>
               </div>
             </div>
@@ -65,8 +66,9 @@ const Benefits: React.FC = () => {
                   Wide Geographical Coverage
                 </p>
                 <p style={{ letterSpacing: "1px" }}>
-                  We have a massive network of endpoints that spans the globe,
-                  enabling you to conveniently ship to any location in the world
+                  Benefit from our extensive global network, linking vast
+                  endpoints across the world. Ship conveniently to any
+                  destination with ease.
                 </p>
               </div>
             </div>
@@ -90,9 +92,9 @@ const Benefits: React.FC = () => {
                   Speedy Service
                 </p>
                 <p style={{ letterSpacing: "1px" }}>
-                  We ensure streamlined, hassle-free and fast air shipping,
-                  offering you a speedy delivery experience even over long
-                  distances
+                  Experience seamless, stress-free, and rapid air shipping with
+                  our commitment to streamlined processes. Enjoy swift delivery,
+                  even across extended distances.
                 </p>
               </div>
             </div>
