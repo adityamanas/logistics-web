@@ -4,6 +4,7 @@ import "./ServiceSection.scss";
 import Air from "../../../../public/images/services-air-freight-teaser.jpg";
 import Digital from "../../../../public/images/services-digital-overview-teaser.jpg";
 import Road from "../../../../public/images/services-road-transport-teaser.jpg";
+import Sea from "../../../../public/images/services-sea-freight-teaser.jpg";
 import Image from "next/image";
 import { ArrowForward } from "@mui/icons-material";
 
@@ -12,7 +13,7 @@ const ServiceSection: React.FC = () => {
     <div id="services" style={{ height: "100%" }}>
       <div className="sea-container serviceSection">
         <div className="imageSection">
-          <Image alt="sea" src={Road} />
+          <Image alt="sea" src={Sea} />
         </div>
         <div className="sea-para serviceDesc">
           <p style={{ fontWeight: "bold", fontSize: "18px" }}>Services</p>
@@ -49,7 +50,7 @@ const ServiceSection: React.FC = () => {
       </div>
       <div className="road-container serviceSection">
         <div className="imageSection">
-          <Image alt="sea" src={Road} />
+          <Image alt="road" src={Road} />
         </div>
         <div className="road-para serviceDesc">
           <p style={{ fontWeight: "bold", fontSize: "18px" }}>Services</p>
