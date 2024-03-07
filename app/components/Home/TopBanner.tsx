@@ -5,7 +5,7 @@ import { Button, Typography } from "@material-ui/core";
 import Container from "../Container/Container";
 import { useRouter } from "next/navigation";
 // import Header from "../Header";
-import Solution from "./Solution";
+import Solution from "./Solution/Solution";
 import Header from "../MainHeader/Header";
 import "./Home.scss";
 
@@ -39,7 +39,7 @@ const TopBanner = () => {
     <>
       <Header />
       <div
-      className="background-container-home"
+        className="background-container-home"
         style={{
           // backgroundImage: `linear-gradient(140deg,rgba(0,0,0,.75) 52.45%,rgba(0,0,0,.1) 100%)
           // , url('https://stockarea.io/assets/user/images/home/home-cover.png')`,
@@ -60,10 +60,12 @@ const TopBanner = () => {
           <Container>
             <div className="topBannerImg">
               <p className="bannerHead">
-               Offer comprehensive inventory management solutions, optimizing your supply chain flow.
+                Offer comprehensive inventory management solutions, optimizing
+                your supply chain flow.
               </p>
               <p className="bannerCaption" style={{}}>
-              Serve as your technology-driven ally for storage and logistics across India and globally.
+                Serve as your technology-driven ally for storage and logistics
+                across India and globally.
               </p>
               <div
                 style={{ display: "flex", alignItems: "center", gap: "100px" }}

@@ -1,14 +1,13 @@
 "use client";
-import Storage from "../Solution/Solution";
-import Benefits from "../Benefit/Benefits";
+import { Typography } from "@material-ui/core";
+
 import Image from "next/image";
-import "./Solution.scss";
 
 const Solution: React.FC = () => {
   return (
     <>
       <div
-      id="about"
+        id="about"
         style={{
           display: "flex",
           flexDirection: "column",
@@ -32,7 +31,17 @@ const Solution: React.FC = () => {
             We cater to business from SME to Enterprise
           </p>
         </div>
-        <div className="solutionItems">
+        <div
+          style={{
+            // ...styles.solutionItem,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            textAlign: "center",
+            flexWrap: "wrap",
+            gap: "70px",
+          }}
+        >
           <div>
             <Image
               src="https://stockarea.io/assets/user/images/home/manufacturers.svg"
@@ -50,6 +59,15 @@ const Solution: React.FC = () => {
               width={70}
             />
             <p style={{ fontSize: "18px", fontWeight: "600" }}>Distributors</p>
+          </div>
+          <div>
+            <Image
+              src="https://img.icons8.com/dotty/80/warehouse--v2.png"
+              alt="warehouse"
+              height={71}
+              width={71}
+            />
+            <p style={{ fontSize: "18px", fontWeight: "600" }}>Warehouse</p>
           </div>
           <div>
             <Image
@@ -80,8 +98,6 @@ const Solution: React.FC = () => {
           </div>
         </div>
       </div>
-      <Benefits />
-      <Storage />
     </>
   );
 };

@@ -1,8 +1,8 @@
 "use client";
 import Container from "../../Container/Container";
 import "./ServiceSection.scss";
-import Air from "../../../../public/images/services-air-freight-teaser.jpg";
-import Digital from "../../../../public/images/services-digital-overview-teaser.jpg";
+import Air from "../../../../public/images/istockphoto-1027833750-612x612.jpg";
+import Digital from "../../../../public/images/csm_Kuehne_Nagel_05_c0d1000ff7.png";
 import Road from "../../../../public/images/services-road-transport-teaser.jpg";
 import Sea from "../../../../public/images/services-sea-freight-teaser.jpg";
 import Image from "next/image";
